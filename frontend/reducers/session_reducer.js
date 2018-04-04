@@ -1,7 +1,7 @@
 import{
   RECEIVE_CURRENT_USER,
-  LOGOUT_CURRENT_USER} from '../actions/session';
-import {merge} from 'lodash/merge';
+  LOGOUT_CURRENT_USER} from '../actions/session_action';
+import merge from 'lodash/merge';
 
 const _nullState = {
   currentUser:null
