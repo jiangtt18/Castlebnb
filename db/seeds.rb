@@ -13,6 +13,10 @@ require 'faker'
 User.destroy_all
 
 10.times do
-  User.create!(username: Faker::Name.name, password: 'password', email: Faker::Internet.email, image_url: 'image_url')
+  User.create!(password: 'password',
+     email: Faker::Internet.email,
+     firstname: Faker::Name.first_name,
+     lastname: Faker::Name.last_name,
+     image_url: 'image_url')
 end
 # #test backend auth

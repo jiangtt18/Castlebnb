@@ -5,7 +5,8 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      firstname: '',
+      lastname:'',
       password: '',
       email:'',
     };
@@ -26,36 +27,46 @@ class SessionForm extends React.Component {
 
 
   render() {
+    // console.log(this.props); testing props
     return (
       <div>
-        <form onSubmit={this.handleSubmit} c>
+        <form onSubmit={this.handleSubmit} >
           Welcome!
           <br/>
 
           <div >
-            <br/>
-            <label>Username:
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <label>Email:
+            <label>Email address:
               <input
                 type='text'
                 value={this.state.email}
                 onChange={this.update('email')}/>
             </label>
             <br/>
-            <label>Password:
+
+            <label>First name:
+              <input type="text"
+                value={this.state.firstname}
+                onChange={this.update('firstname')}
+              />
+            </label>
+            <br/>
+
+            <label>Last name:
+                <input type="text"
+                  value={this.state.lastname}
+                  onChange={this.update('lastname')}
+                />
+            </label>
+            <br/>
+
+            <label>Create a Password:
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
               />
             </label>
+
             <br/>
             <input type="submit" value={this.props.formType} />
           </div>

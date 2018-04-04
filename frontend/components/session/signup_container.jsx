@@ -4,7 +4,7 @@ import SessionForm from './signup_form';
 
 const mapDispatchToProps = dispatch => ({
   createNewUser: formUser => dispatch(createNewUser(formUser)),
-  formType: 'create form'
+  formType: 'signup'
 });
 
 export default connect(null, mapDispatchToProps)(SessionForm);
