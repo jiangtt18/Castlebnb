@@ -18,6 +18,18 @@ class Login extends React.Component{
     .then(() => this.props.history.push('/spots'));
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error,i) => (
+          <li key = {`errors-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     return(
       <div>
@@ -25,7 +37,8 @@ class Login extends React.Component{
           <h2> Log in to continue</h2>
           <div >
             <br/>
-
+            Please {this.props.formType} or {this.props.navLink}
+            {this.renderErrors()}
             <label>Email:
               <input
                 type='text'

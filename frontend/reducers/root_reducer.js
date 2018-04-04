@@ -1,8 +1,11 @@
  import {combineReducers} from 'redux';
  // import entitlesReducer from './entities';
- import sessionReducer from './session_reducer';
+ import errors from './errors_reducer';
+ import session from './session_reducer';
+
 
  export default combineReducers({
    // entities: entitlesReducer,
-   session: sessionReducer,
+   session,
+   errors,
  });

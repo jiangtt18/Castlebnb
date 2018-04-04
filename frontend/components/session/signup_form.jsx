@@ -25,6 +25,18 @@ class SessionForm extends React.Component {
     this.props.createNewUser(user);
   }
 
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.map((error,i) => (
+          <li key = {`errors-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
 
   render() {
     // console.log(this.props); testing props
@@ -33,7 +45,8 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} >
           Welcome!
           <br/>
-
+          Please {this.props.formType} or {this.props.navLink}
+          {this.renderErrors()}
           <div >
             <label>Email address:
               <input
@@ -75,4 +88,4 @@ class SessionForm extends React.Component {
     );
   }
 }
-export default SessionForm;
+export default withRouter(SessionForm);

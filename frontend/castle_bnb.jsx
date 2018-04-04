@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   ReactDOM.render(<Root store={store} />, root);
 
+  // window.store = store;
   // window.getState = store.getState;
-  // ReactDOM.render(<h1>Welcome to CastleBnB</h1>, root); // render page test
+  // window.dispatch = store.dispatch;
+  // ReactDOM.render(<h1>Welcome to CastleBnB</h1>, root); // render page
 });
