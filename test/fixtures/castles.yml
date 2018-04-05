@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  host_id: MyString
+  title: MyString
+  discription: MyString
+  is_A/VEquipment: MyString
+  is_ampleParking: MyString
+  is_carriage: MyString
+  is_wifi: MyString
+  is_oceanView: MyString
+  is_gardenView: MyString
+  price: MyString
+  bed_room: MyString
+  bath_room: MyString
+  num_guests: MyString
+  bath: MyString
+  lng: MyString
+  lat: MyString
+  street_address: MyString
+  city: MyString
+  zip_code: MyString
+  state: MyString
+  country: MyString
+
+two:
+  host_id: MyString
+  title: MyString
+  discription: MyString
+  is_A/VEquipment: MyString
+  is_ampleParking: MyString
+  is_carriage: MyString
+  is_wifi: MyString
+  is_oceanView: MyString
+  is_gardenView: MyString
+  price: MyString
+  bed_room: MyString
+  bath_room: MyString
+  num_guests: MyString
+  bath: MyString
+  lng: MyString
+  lat: MyString
+  street_address: MyString
+  city: MyString
+  zip_code: MyString
+  state: MyString
+  country: MyString

@@ -20,3 +20,31 @@ User.destroy_all
      image_url: 'image_url')
 end
 # #test backend auth
+
+
+
+20.times do
+ Castle.create(
+   host_id: [1,2,3,4,5,6,7,8,9,10].sample,
+   title: Faker::Seinfeld.character,
+   street_address: Faker::Address.street_address,
+   city: Faker::Address.city,
+   state: Faker::Address.state,
+   zip_code: Faker::Address.zip_code,
+   country:Faker::Address.country,
+   discription: Faker::RickAndMorty.quote,
+   price: rand(300..1000),
+   bed_room: rand(5..10),
+   bath_room: rand(4..8),
+   bath: rand(4..8),
+   num_guests: rand(10..100),
+   is_AV_Equipment:[true, false].sample,
+   is_wifi: [true, false].sample,
+   is_ampleParking:[true, false].sample,
+   is_carriage:[true, false].sample,
+   is_oceanView:[true, false].sample,
+   is_gardenView:[true, false].sample,
+   lng:Faker::Address.longitude,
+   lat:Faker::Address.latitude
+ )
+end

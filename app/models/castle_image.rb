@@ -1,0 +1,2 @@
+class CastleImage < ApplicationRecord
+end
