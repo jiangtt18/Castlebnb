@@ -13,10 +13,11 @@ export default ({ currentUser, login,logout,openModal }) => {
         <li><button
           onClick={() => openModal('signup')}>Signup
         </button></li>
-        
+
         <li><button
           onClick={ ()=>
-            login({email: 'guest@castlebnb.com', password:'password'})
+            login({email: 'guest@castlebnb.com', password:'password',
+               firstname:'future user', lastname:"guest"})
           }>demo
         </button></li>
       </ul>
