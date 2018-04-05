@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => ({
     </button>
   ),
   closeModal: () => dispatch(closeModal()),
-  clearErrors: () => dispatch(receiveErrors(''))
+  clearErrors: () => dispatch(receiveErrors([]))
 });
 
 

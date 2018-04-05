@@ -5,14 +5,21 @@ export default ({ currentUser, login,logout,openModal }) => {
 
   const sessionLinks = () => (
     <nav className="login-signup">
-      <button onClick={() => openModal('login')}>Login</button>
-      &nbsp;or&nbsp;
-      <button onClick={() => openModal('signup')}>Signup</button>
-      <button
-        onClick={ ()=>
-          login({email: 'guest@castlebnb.com', password:'password'})
-        }>demo
-      </button>
+      <ul >
+        <li><button
+          onClick={() => openModal('login')}>Login
+        </button></li>
+
+        <li><button
+          onClick={() => openModal('signup')}>Signup
+        </button></li>
+        
+        <li><button
+          onClick={ ()=>
+            login({email: 'guest@castlebnb.com', password:'password'})
+          }>demo
+        </button></li>
+      </ul>
     </nav>
   );
 

@@ -1,0 +1,43 @@
+.login-signup {
+  // display: flex;
+  // justify-content: space-between;
+  height: 36px;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+nav ul{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+nav li{
+
+}
+
+nav button{
+  width: 24px;
+  margin-right: 20px;
+}
+
+.header-name {
+  font-size: 10px;
+  margin-right: 6px;
+  padding-top: 2px;
+}
+
+.nav-greeting {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.error-ul {
+  font-size: 10px;
+  line-height: 12px;
+  color: #d30303;
+}

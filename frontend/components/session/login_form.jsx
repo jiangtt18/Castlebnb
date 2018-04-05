@@ -23,14 +23,16 @@ class Login extends React.Component{
     .then(
       () => {
         this.props.history.push('/');
-        this.props.closeModal();    
+        this.props.closeModal();
       }
     );
   }
 
   renderErrors() {
+
     return(
       <ul>
+        
         {this.props.errors.map((error,i) => (
           <li key = {`errors-${i}`}>
             {error}
@@ -42,30 +44,34 @@ class Login extends React.Component{
 
   render() {
     return(
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <h2> Log in to continue</h2>
+      <div >
+        <form className='session-form' onSubmit={this.handleSubmit}>
+          <div className='title'> Log in to continue</div>
           <div >
             <br/>
-            Please {this.props.formType} or {this.props.otherForm}
             <div onClick={this.props.closeModal} className="close-x">X</div>
 
             {this.renderErrors()}
-            <label>Email:
-              <input
-                type='text'
-                value={this.state.email}
-                onChange={this.update('email')}/>
-            </label>
             <br/>
-            <label>Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-              />
-            </label>
+
+            <input
+              placeholder= ' Email Adress '
+              type='text'
+              value={this.state.email}
+              onChange={this.update('email')}/>
+
             <br/>
-            <input type="submit" value={this.props.formType} />
+
+            <input type="password"
+              placeholder=' Password'
+              value={this.state.password}
+              onChange={this.update('password')}
+            />
+
+            <br/>
+            <input
+              type="submit"
+              value={this.props.formType} />
           </div>
         </form>
 
