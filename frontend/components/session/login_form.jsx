@@ -31,8 +31,8 @@ class Login extends React.Component{
   renderErrors() {
 
     return(
-      <ul>
-        
+      <ul className='error' >
+
         {this.props.errors.map((error,i) => (
           <li key = {`errors-${i}`}>
             {error}

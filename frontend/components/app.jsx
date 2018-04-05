@@ -11,12 +11,9 @@ import{BookContianer} from './booking/book_container';
 const App = () => (
   <div>
     <Modal />
-    <header>
-      <Link to="/" className="header-link">
-        <h1>Castle BnB</h1>
-      </Link>
+
       <NavBarContainer />
-    </header>
+
     <ProtectedRoute path='/book' component={BookContianer} />
   </div>
 );
