@@ -19,10 +19,14 @@ class SessionForm extends React.Component {
     });
   }
 
+  componentWillUnmount(){
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.createNewUser(user);
+    this.props.processForm(user);
   }
 
   renderErrors() {
@@ -45,7 +49,9 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} >
           Welcome!
           <br/>
-          Please {this.props.formType} or {this.props.navLink}
+          Please {this.props.formType} or {this.props.otherForm}
+          <div onClick={this.props.closeModal} className="close-x">X</div>
+
           {this.renderErrors()}
           <div >
             <label>Email address:

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component{
   constructor(props){
@@ -12,10 +13,19 @@ class Login extends React.Component{
   };
   }
 
+  componentWillUnmount(){
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state)
-    .then(() => this.props.history.push('/spots'));
+    this.props.processForm(this.state)
+    .then(
+      () => {
+        this.props.history.push('/');
+        this.props.closeModal();    
+      }
+    );
   }
 
   renderErrors() {
@@ -37,7 +47,9 @@ class Login extends React.Component{
           <h2> Log in to continue</h2>
           <div >
             <br/>
-            Please {this.props.formType} or {this.props.navLink}
+            Please {this.props.formType} or {this.props.otherForm}
+            <div onClick={this.props.closeModal} className="close-x">X</div>
+
             {this.renderErrors()}
             <label>Email:
               <input
@@ -62,4 +74,4 @@ class Login extends React.Component{
   }
 }
 
-  export default Login;
+  export default withRouter(Login);
