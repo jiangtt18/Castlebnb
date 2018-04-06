@@ -55,16 +55,24 @@ nav li{
   padding: 20px;
 }
 
-nav li:hover{
-  border-bottom: 1px solid #008489
-}
+
 nav button{
   width: 24px;
   margin-right: 20px;
 }
+.right_nav{
+  display:flex;
+  width: 22%;
+  height: 55px;
+}
 
-.header-name {
-  font-size: 10px;
-  margin-right: 6px;
-  padding-top: 2px;
+.right_nav li button {
+  display: flex;
+  width:100%;
+}
+
+
+
+nav li:hover{
+  border-bottom: 1px solid #008489
 }

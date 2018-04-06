@@ -36,10 +36,21 @@ export default ({ currentUser, login,logout,openModal }) => {
   );
 
   const personalGreeting = () => (
-   <hgroup className="header-group">
-     <h2 className="header-name">Hi, {currentUser.firstname}!</h2>
-     <button className="header-button" onClick={logout}>Log Out</button>
-   </hgroup>
+
+
+   <header className='header'>
+     <nav className="header_nav">
+       <div className='left_nav'>
+           <a href='#'><img src={staticAssets.logo} alt='logo'/>
+           </a>
+         <input className='search' type="text" placeholder=" Try Tokyo.."/>
+       </div>
+       <ul className='right_nav'>
+         <li >Hi, {currentUser.firstname}!</li>
+         <li><button onClick={logout}>Log Out</button></li>
+       </ul>
+    </nav>
+   </header>
  );
 
  return (
@@ -47,6 +58,7 @@ export default ({ currentUser, login,logout,openModal }) => {
    personalGreeting(currentUser, logout) :
    sessionLinks()
  );
+
 
 
 };

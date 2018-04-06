@@ -8,11 +8,11 @@ class Castle < ApplicationRecord
   has_many :images,
     primary_key: :id,
     foreign_key: :castle_id,
-    class_name: :castleImage
+    class_name: :CastleImage
 
   # has_many :reviews,
   #   primary_key: :id,
-  #   foreign_key: :castle_id,
+  #   foreign_key: :revies_id,
   #   class_name: :Review
 
 
