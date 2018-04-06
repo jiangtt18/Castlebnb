@@ -1,7 +1,7 @@
-import * as CastleAPI from '../util/castle_util';
+import * as CastleAPI from '../utils/castle_util';
 export const RECEIVE_CASTLES = "RECEIVE_CASTLES";
 export const RECEIVE_CASTLE = "RECEIVE_CASLTE";
-export const RECEIVE_CASLTE_ERRORS = "RECEIVE_CASTLE_ERRORS";
+export const RECEIVE_CASTLE_ERRORS = "RECEIVE_CASTLE_ERRORS";
 
 export const receiveCastles = (castles) => {
   return ({
@@ -19,27 +19,25 @@ export const receiveCastle = (castle) => {
 
 export const receiveCastleErrors = (errors) => {
   return({
-    type: RECEIVE_CASLTE_ERRORS,
+    type: RECEIVE_CASTLE_ERRORS,
     errors
   });
 };
 
 
 
-export const fetchCastles = data => dispatch => (
-  CastleAPI.fetchcastles(data)
+export const fetchCastles = () => dispatch => (
+  CastleAPI.fetchCastles()
   .then(
-    castle => dispatch(receiveCastles)),
+    castlesAndImages => dispatch(receiveCastles(castlesAndImages)),
     errors => dispatch(receiveCastleErrors(errors.responseJSON))
   )
-)
+);
 
-export const fetchSpot = (id) => {
-
-  return (dispatch) => {
-    return SpotAPI.fetchSpot(id)
-      .then((spot)=> dispatch(receiveSpot(spot)),
-      (errors) => dispatch(receiveSpotErrors(errors.responseJSON))
-    );
-  };
-};
+export const fetchCastle = id => dispatch => (
+  CastleAPI.fetchCastle(id)
+    .then(
+    castle => dispatch(receiveCastle(castle)),
+    errors => dispatch(receiveCastleErrors(errors.responseJSON))
+  )
+);
