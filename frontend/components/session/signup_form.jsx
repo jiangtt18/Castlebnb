@@ -48,7 +48,7 @@ class SessionForm extends React.Component {
     return (
       <div>
         <form className='session-form' onSubmit={this.handleSubmit} >
-
+          <div className='title'>Let’s get you signed up</div>
           <div>
 
           <div onClick={this.props.closeModal} className="close-x">X</div>
@@ -86,6 +86,14 @@ class SessionForm extends React.Component {
             />
             <br/>
             <input type="submit" value={this.props.formType} />
+
+              <div className='redirect'>
+                <span> Already have an Airbnb account?</span>
+                <span><button style={{'color': '#008489'}}
+                  onClick={() => this.props.otherForm()}>
+                  Log in
+                </button></span>
+              </div>
           </div>
         </form>
       </div>

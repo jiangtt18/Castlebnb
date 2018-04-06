@@ -1,3 +1,4 @@
+@import "./base/global";
 .session-form {
   display: flex;
   justify-content: center;
@@ -58,4 +59,21 @@
    font-size: 15px;
    line-height: 12px;
    color: #d30303;
+ }
+
+ .redirect {
+   text-align: center;
+ }
+ .session-form span{
+    color: $grey;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+    font-size: 15px;
+    line-height: 18px ;
+    letter-spacing: 0.2px ;
+    padding-top: 0px ;
+    padding-bottom: 0px ;
+    font-weight: 300 ;
+    display: inline ;
+    margin-right:10px;
+    margin-left: 10px;
  }

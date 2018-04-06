@@ -72,6 +72,18 @@ class Login extends React.Component{
             <input
               type="submit"
               value={this.props.formType} />
+              <div className='redirect'>
+                <span>  Don’t have an account?</span>
+                <span><button style={{'color': '#008489'}}
+                  onClick={() => this.props.otherForm()}>
+                  Sign up
+                </button></span>
+              </div>
+
+
+
+
+
           </div>
         </form>
 
