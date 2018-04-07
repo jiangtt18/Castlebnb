@@ -16,23 +16,24 @@ class castleIndexItem extends React.Component {
    }
 
    return (
-     <div
-       className="castle-index-item"
 
-     >
-       <div className="index-item-info">
-         <span>{city}</span>
-         <span>{title}</span>
-         <span className="index-item-copy">{price} per night</span>
-         <span className="index-item-category">Rating:5 {num_guests}</span>
-
+       <div className="castle-index-item">
+         <img
+           src={image_url} alt='awesome castle pic'
+         />
+         <div className="index-item-info">
+          <p className='index-city'>{city}</p>
+          <p className='index-title'>{title}</p>
+          <p className='index-price'>${price} per night</p>
+          <p className='index-rating'>Rating:5 {num_guests}</p>
+         </div>
        </div>
-       <img
-         src={image_url}
-         style={{'width': '64px', 'height': '64px'}}/>
-     </div>
+
    );
  }
 }
+
+
+
 
 export default withRouter(castleIndexItem);

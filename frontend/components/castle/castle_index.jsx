@@ -10,7 +10,7 @@ class CastleIndex extends React.Component {
 
 
   render(){
-    if (Object.keys(this.props.castles).length == 0) {
+    if (Object.keys(this.props.castles).length === 0) {
       return (
         <p>Loading...</p>
       )
@@ -20,13 +20,17 @@ class CastleIndex extends React.Component {
     const castleImages = Object.values(this.props.castles[1]);
     return(
       <div>
+        <ul class='castle-index'>
         {featuredCastles.map(castle => (
+          <li>
           <CastleIndexItem
             castle={castle}
             image={castleImages[castle.castleImageId[0]]}
             key={castle.id}
             />
+          </li>
         ))}
+        </ul>
       </div>
     );
 

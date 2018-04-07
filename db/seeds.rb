@@ -11,6 +11,8 @@ require 'faker'
 
 
 User.destroy_all
+Castle.destroy_all
+CastleImage.destroy_all
 
 10.times do
   User.create!(password: 'password',
@@ -50,8 +52,7 @@ end
 end
 
 20.times do
-  CastleImage.create(
-    castle_id:rand(1..20),
+  CastleImage.create(castle_id:rand(1..20),
     image_url: 'http://res.cloudinary.com/doohtqbau/image/upload/c_scale,w_172/v1522973051/Screen_Shot_2018-04-05_at_5.03.58_PM_dc9jwv.png'
   )
 end

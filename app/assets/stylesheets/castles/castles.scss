@@ -1,0 +1,83 @@
+
+.exploreTab{
+  margin-left: 116px;
+  margin-right: 116px;
+  position: relative;
+  top: 80px;
+}
+
+.exploreTab h3 {
+  font-weight: 700 ;
+  margin-bottom: 10px ;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+  font-size: 28px ;
+  line-height: 32px ;
+  letter-spacing: -0.6px ;
+  padding-top: 2px ;
+  padding-bottom: 2px ;
+  color: #484848 ;
+}
+
+.exploreTab img {
+  height: 350px;
+}
+
+
+.castle-index{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin:90px 116px 90px 116px;
+}
+
+.castle-index li {
+  display:flex;
+  width: 250px;
+  height: 300px;
+}
+
+.castle-index-item {
+  width:100%;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+  font-weight: 700 ;
+  color: #484848;
+  padding-top: 0px ;
+  padding-bottom: 40px ;
+}
+
+.index-city {
+  color: rgb(78, 65, 38);
+  font-size: 12px ;
+  line-height: 16px ;
+  letter-spacing: 0.2px ;
+
+}
+
+.index-title {
+  margin: 0px ;
+  font-size: 19px ;
+  line-height: 22px ;
+
+}
+
+.index-price {
+  font-size: 15px ;
+  line-height: 18px ;
+  letter-spacing: 0.2px ;
+  font-weight: 100 !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+.index-rating {
+  font-weight: normal ;
+  margin: 0px ;
+  font-size: 12px ;
+  line-height: 16px ;
+  letter-spacing: 0.2px ;
+  display: inline;
+}
+
+.castle-index img {
+  width:100%;
+  height:70%;
+}
