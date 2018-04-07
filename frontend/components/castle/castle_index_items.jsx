@@ -16,7 +16,6 @@ class castleIndexItem extends React.Component {
    }
 
    return (
-
        <div className="castle-index-item">
          <img
            src={image_url} alt='awesome castle pic'
@@ -28,7 +27,6 @@ class castleIndexItem extends React.Component {
           <p className='index-rating'>Rating:5 {num_guests}</p>
          </div>
        </div>
-
    );
  }
 }
