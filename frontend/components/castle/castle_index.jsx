@@ -16,7 +16,7 @@ class CastleIndex extends React.Component {
     }
 
     const featuredCastles = Object.values(this.props.castles[0]);
-    const castleImages = Object.values(this.props.castles[1]);
+    const castleImages = this.props.castles[1];
     return(
 
       <div>
@@ -29,14 +29,15 @@ class CastleIndex extends React.Component {
           <h3>Castles around the world</h3>
         </div>
         <ul className='castle-index'>
+      
         {featuredCastles.map(castle => (
 
           <CastleIndexItem
             castle={castle}
-            image={castleImages[castle.castleImageId[0]]}
+            image={castleImages}
             key={castle.id}
             />
-        
+
         ))}
         </ul>
       </div>

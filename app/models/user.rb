@@ -7,8 +7,10 @@ class User < ApplicationRecord
 
  after_initialize :ensure_session_token
  #
- # has_many :castles,
- #  primary_id:
+ has_many :castles,
+  primary_key: :id,
+  foreign_key: :host_id,
+  class_name: :Castle
  # has_many :reviews,
  #  class_name: :Review,
  #  foreign_key: :guest_id,

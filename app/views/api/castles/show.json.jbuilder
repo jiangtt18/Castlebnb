@@ -5,4 +5,5 @@ json.extract! @castle, :id,:host_id, :title, :discription,
   :is_ampleParking,:is_carriage,:is_wifi, :is_oceanView,
   :is_gardenView
 json.castleImageURL @castle.images.pluck(:image_url)
+json.host @castle.host.firstname
 # look like this {key:value}

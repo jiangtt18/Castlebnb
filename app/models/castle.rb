@@ -10,6 +10,11 @@ class Castle < ApplicationRecord
     foreign_key: :castle_id,
     class_name: :CastleImage
 
+  belongs_to :host,
+    primary_key: :id,
+    foreign_key: :host_id,
+    class_name: :User
+
   # has_many :reviews,
   #   primary_key: :id,
   #   foreign_key: :revies_id,
