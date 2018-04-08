@@ -6,7 +6,7 @@ const castleReducer = (oldState = {}, action) => {
   switch (action.type) {
     case RECEIVE_CASTLES:
       return action.castles;
-    case  RECEIVE_CASTLE:
+    case RECEIVE_CASTLE:
       return merge({}, oldState, {[action.castle.id]:action.castle});
     default:
       return oldState;

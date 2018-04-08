@@ -1,5 +1,8 @@
 
-json.extract! @spot, :id, :title, :location, :price, :host_id, :num_guests,
-:num_beds, :num_baths, :num_bedrooms, :description, :rules, :lat, :lng
-json.image_url asset_path(@spot.image.url)
-json.average_rating @spot.average_rating
+json.extract! @castle, :id,:host_id, :title, :discription,
+  :price,:bed_room,:bath_room,:num_guests,:bath,:lng,:lat,
+  :street_address,:city,:zip_code,:state,:country,:is_AV_Equipment,
+  :is_ampleParking,:is_carriage,:is_wifi, :is_oceanView,
+  :is_gardenView
+json.castleImageURL @castle.images.pluck(:image_url)
+# look like this {key:value}

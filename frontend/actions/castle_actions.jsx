@@ -1,6 +1,6 @@
 import * as CastleAPI from '../utils/castle_util';
 export const RECEIVE_CASTLES = "RECEIVE_CASTLES";
-export const RECEIVE_CASTLE = "RECEIVE_CASLTE";
+export const RECEIVE_CASTLE = "RECEIVE_CASTLE";
 export const RECEIVE_CASTLE_ERRORS = "RECEIVE_CASTLE_ERRORS";
 
 export const receiveCastles = (castles) => {
@@ -11,6 +11,7 @@ export const receiveCastles = (castles) => {
 };
 
 export const receiveCastle = (castle) => {
+
   return ({
     type: RECEIVE_CASTLE,
     castle

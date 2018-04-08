@@ -6,6 +6,7 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import {AuthRoute, ProtectedRoute} from '../utils/route_util';
 import{BookContianer} from './booking/book_container';
 import CastleIndexContainer from './castle/castle_index_container';
+import CastleShowContainer from './castle/castle_show_container';
 
 
 const App = () => (
@@ -14,6 +15,7 @@ const App = () => (
     <NavBarContainer />
 
     <Switch>
+      <Route path="/castles/:castleId" component={CastleShowContainer} />
       <Route path="/" component={CastleIndexContainer} />
     </Switch>
   </div>

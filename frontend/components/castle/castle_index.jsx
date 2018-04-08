@@ -4,7 +4,6 @@ import CastleIndexItem from './castle_index_items';
 class CastleIndex extends React.Component {
 
   componentDidMount(){
-
     this.props.fetchCastles();
   }
 
@@ -13,7 +12,7 @@ class CastleIndex extends React.Component {
     if (Object.keys(this.props.castles).length === 0) {
       return (
         <p>Loading...</p>
-      )
+      );
     }
 
     const featuredCastles = Object.values(this.props.castles[0]);
@@ -29,15 +28,15 @@ class CastleIndex extends React.Component {
           />
           <h3>Castles around the world</h3>
         </div>
-        <ul class='castle-index'>
+        <ul className='castle-index'>
         {featuredCastles.map(castle => (
-          <li>
+
           <CastleIndexItem
             castle={castle}
             image={castleImages[castle.castleImageId[0]]}
             key={castle.id}
             />
-          </li>
+        
         ))}
         </ul>
       </div>
