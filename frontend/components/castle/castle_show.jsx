@@ -19,6 +19,8 @@ class CastleShow extends React.Component{
     }
   }
 
+
+
   renderAmenities() {
     const{is_AV_Equipment,is_ampleParking,is_carriage,is_wifi, is_oceanView,
     is_gardenView} = this.props.castle;

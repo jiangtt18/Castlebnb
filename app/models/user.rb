@@ -11,10 +11,11 @@ class User < ApplicationRecord
   primary_key: :id,
   foreign_key: :host_id,
   class_name: :Castle
- # has_many :reviews,
- #  class_name: :Review,
- #  foreign_key: :guest_id,
- #  primary_key: :id
+
+ has_many :reviews,
+  foreign_key: :reviewer_id,
+  primary_key: :id,
+  class_name: :Review
 
 
  def self.find_by_credentials(email, password)

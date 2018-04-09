@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180405205900) do
+ActiveRecord::Schema.define(version: 20180408205653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,22 @@ ActiveRecord::Schema.define(version: 20180405205900) do
     t.index ["state"], name: "index_castles_on_state"
     t.index ["street_address"], name: "index_castles_on_street_address", unique: true
     t.index ["zip_code"], name: "index_castles_on_zip_code"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "castle_id", null: false
+    t.integer "reviewer_id", null: false
+    t.string "comment", default: "", null: false
+    t.integer "accuracy", null: false
+    t.integer "communication", null: false
+    t.integer "location", null: false
+    t.integer "value", null: false
+    t.integer "checkin", null: false
+    t.integer "num_reviewers"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "cleanliness", null: false
+    t.index ["castle_id"], name: "index_reviews_on_castle_id"
   end
 
   create_table "users", force: :cascade do |t|

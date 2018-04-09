@@ -13,6 +13,7 @@ require 'faker'
 User.destroy_all
 Castle.destroy_all
 CastleImage.destroy_all
+Review.destroy_all
 
 10.times do
   User.create!(password: 'password',
@@ -54,5 +55,19 @@ end
 20.times do
   CastleImage.create(castle_id:rand(1..20),
     image_url: 'http://res.cloudinary.com/doohtqbau/image/upload/c_scale,w_172/v1522973051/Screen_Shot_2018-04-05_at_5.03.58_PM_dc9jwv.png'
+  )
+end
+
+
+20.times do
+  Review.create!(accuracy: rand(3..5),
+    communication: rand(3..5),
+    cleanliness: rand(3..5),
+    value: rand(3..5),
+    checkin: rand(3..5),
+    location: rand(3..5),
+    comment: ['cool','awesome','greate',':)','Yes!'].sample,
+    castle_id: rand(1..20),
+    reviewer_id:rand(1..6)
   )
 end

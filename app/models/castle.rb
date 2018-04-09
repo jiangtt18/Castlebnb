@@ -15,10 +15,10 @@ class Castle < ApplicationRecord
     foreign_key: :host_id,
     class_name: :User
 
-  # has_many :reviews,
-  #   primary_key: :id,
-  #   foreign_key: :revies_id,
-  #   class_name: :Review
+  has_many :reviews,
+    primary_key: :id,
+    foreign_key: :castle_id,
+    class_name: :Review
 
 
 

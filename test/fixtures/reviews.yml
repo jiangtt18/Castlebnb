@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  castle_id: 1
+  reviewer_id: 1
+  comment: MyString
+  accuracy: 1
+  communication: 1
+  location: 1
+  value: 1
+  checkin: 1
+  num_reviewers: 1
+
+two:
+  castle_id: 1
+  reviewer_id: 1
+  comment: MyString
+  accuracy: 1
+  communication: 1
+  location: 1
+  value: 1
+  checkin: 1
+  num_reviewers: 1
