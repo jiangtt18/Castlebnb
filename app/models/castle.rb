@@ -21,19 +21,51 @@ class Castle < ApplicationRecord
     class_name: :Review
 
 
+    def accuracy_avg
+     self.reviews.average(:accuracy) || '0'
+
+    end
+
+    def communication_avg
+      self.reviews.average(:communication) || '0'
+
+    end
+
+    def cleanliness_avg
+      self.reviews.average(:cleanliness) || '0'
+    end
+
+    def value_avg
+      self.reviews.average(:value) || '0'
+    end
+
+    def checkin_avg
+      self.reviews.average(:checkin) || '0'
+    end
+
+    def location_avg
+      self.reviews.average(:location) || '0'
+    end
+
+    def rating
+       r = (accuracy_avg.to_f  + communication_avg.to_f + cleanliness_avg.to_f+
+       value_avg.to_f + checkin_avg.to_f + location_avg.to_f) /6
+       r.to_i
+    end
 
 
 
-  # def average_rating
-  #   Total_stars = review.accuracy + review.communication +
-  #   review.value + review.location + review.checkin
-  #   Total_stars / review.num_reviewers
-  # end
-
-  def self.in_bounds(bounds)
+  def in_bounds(bounds)
     self.where("lat < ?", bounds[:northEast][:lat])
         .where("lat > ?", bounds[:southWest][:lat])
         .where("lng > ?", bounds[:southWest][:lng])
         .where("lng < ?", bounds[:northEast][:lng])
   end
+
+
+  def self.find_by_keyword(keyword)
+   self.where("lower(city) like ?", "%#{keyword.downcase}%");
+ end
+
+
 end

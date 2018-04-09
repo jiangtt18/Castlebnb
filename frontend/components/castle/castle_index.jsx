@@ -1,6 +1,7 @@
 import React from 'react';
 import CastleIndexItem from './castle_index_items';
 
+
 class CastleIndex extends React.Component {
 
   componentDidMount(){
@@ -29,7 +30,7 @@ class CastleIndex extends React.Component {
           <h3>Castles around the world</h3>
         </div>
         <ul className='castle-index'>
-      
+
         {featuredCastles.map(castle => (
 
           <CastleIndexItem
@@ -40,6 +41,7 @@ class CastleIndex extends React.Component {
 
         ))}
         </ul>
+
       </div>
     );
 

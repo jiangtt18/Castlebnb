@@ -10,11 +10,12 @@ export const receiveCastles = (castles) => {
   });
 };
 
-export const receiveCastle = (castle) => {
+export const receiveCastle = (payload) => {
 
   return ({
     type: RECEIVE_CASTLE,
-    castle
+    castle: payload.castle,
+    reviews: payload.reviews,
   });
 };
 
@@ -38,7 +39,7 @@ export const fetchCastles = () => dispatch => (
 export const fetchCastle = id => dispatch => (
   CastleAPI.fetchCastle(id)
     .then(
-    castle => dispatch(receiveCastle(castle)),
+    payload => dispatch(receiveCastle(payload)),
     errors => dispatch(receiveCastleErrors(errors.responseJSON))
   )
 );

@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import ReviewIndexContainer from '../reviews/review_container';
+
 
 
 class CastleShow extends React.Component{
@@ -59,7 +61,7 @@ class CastleShow extends React.Component{
 
     let a = this.props.castle;
 
-    if (this.props.castle == undefined) {
+    if (!this.props.castle) {
       return (
         <p>Loading...</p>
       );
@@ -91,7 +93,7 @@ class CastleShow extends React.Component{
                 </p>
               </div>
 
-              <div class='hostInfo'>
+              <div className='hostInfo'>
                 <p id='host'>Hosted by {host}</p>
                 <p> {num_guests} reviews</p>
                 <p id='description'>{discription}</p>
@@ -107,6 +109,10 @@ class CastleShow extends React.Component{
           </div>
         </div>
       </div>
+
+      <ReviewIndexContainer
+         review = {this.props.review}
+         />
     </div>
     );
 

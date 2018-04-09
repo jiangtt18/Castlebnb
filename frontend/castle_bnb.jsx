@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import {fetchCastle} from './utils/castle_util';
-import {receiveCastle} from './actions/castle_actions';
+import {fetchReviews} from './utils/review_util';
+import {receiveReviews} from './actions/review_action';
 
 
 document.addEventListener('DOMContentLoaded',()=>{
@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded',()=>{
   window.store = store;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchCastle = fetchCastle;
-  window.receiveCastle = receiveCastle;
+  window.fetchReviews = fetchReviews;
+  window.receiveReviews = receiveReviews;
 
   ReactDOM.render(<Root store={store} />, root);
 

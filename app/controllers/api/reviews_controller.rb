@@ -1,12 +1,14 @@
-class Api::ImagesController < ApplicationController
-  before_action :require_logged_in
+class Api::ReviewsController < ApplicationController
+  # before_action :require_logged_in
 
   def index
-    if params.include?("review")
-      @reviews = Review.where(review_params)
-    else
-      @reviews = Review.all.limit(18)
-    end
+    @reviews = Review.where(castle_id:2 )
+    # params[:castleId]
+      if @reviews
+       render :index
+      else
+       render json: ["great reviews are coming soon"]
+      end
   end
 
   def create
@@ -24,14 +26,10 @@ class Api::ImagesController < ApplicationController
     @review.destroy!
   end
 
-
   private
 
   def review_params
-    params.require(:review).permit(:accuracy,:communication,:cleanliness, :location
-       :value, :checkin, :comment, :castle_id,:reviewer_id
-    )
+    params.require(:review).permit(:accuracy,:communication,:cleanliness, :location,
+       :value, :checkin, :comment, :castle_id,:reviewer_id,:num_reviewers)
   end
-
-
 end

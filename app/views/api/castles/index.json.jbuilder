@@ -2,8 +2,9 @@
   json.castle do
     json.set! castle.id do
       json.extract! castle, :id, :title, :city, :price, :num_guests
-      # json.average_rating spot.average_rating # will impletment in review
+      json.average_rating castle.rating
       json.castleImageId castle.images.pluck(:id)
+
     end
 
   end
@@ -14,4 +15,6 @@
       end
     end
   end
+
+
 end

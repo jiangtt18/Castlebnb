@@ -5,7 +5,8 @@ import CastleShow from './castle_show';
 import { fetchCastle } from '../../actions/castle_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  castle: state.entities.castles[ownProps.match.params.castleId]
+  castle: state.entities.castles[ownProps.match.params.castleId],
+  review: state.entities.reviews
 });
 
 
