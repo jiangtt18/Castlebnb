@@ -113,7 +113,8 @@ class ReviewIndex extends React.Component {
           return(this.setState({errors: ["Please log in to add a review"]}));
       }
       if (this.props.errors.length !== 0) {
-        return this.renderErrors();
+        return ;
+
       }
 
       const reviewerId = this.props.currentUser.id;
@@ -137,7 +138,7 @@ class ReviewIndex extends React.Component {
 
   }
 
-  componentWillUnmount() {
+  componentDidMount() {
       this.props.clearErrors();
     }
 
@@ -164,12 +165,12 @@ class ReviewIndex extends React.Component {
       <div>
         <h3>{reviewDetails.length} Reviews {rating}</h3>
         <ul>
-          <li>Accuracy {accuracy_avg} </li>
-          <li>Location {location_avg}</li>
-          <li>Communication {communication_avg}</li>
-          <li>Check In { checkin_avg}</li>
-          <li>Cleanliness { cleanliness_avg}</li>
-          <li>Value {value_avg} </li>
+          <li>Accuracy {Math.round(accuracy_avg)} </li>
+          <li>Location {Math.round(location_avg)}</li>
+          <li>Communication {Math.round(communication_avg)}</li>
+          <li>Check In { Math.round(checkin_avg)} </li>
+          <li>Cleanliness { Math.round(cleanliness_avg)}</li>
+          <li>Value {Math.round(value_avg)} </li>
         </ul>
         <ul>
           {

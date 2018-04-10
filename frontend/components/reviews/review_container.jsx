@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchReviews, createReview, receiveErrors } from '../../actions/review_action';
+import { fetchReviews, createReview, receiveReviewErrors } from '../../actions/review_action';
 import ReviewIndex from './review_index';
 import { withRouter } from 'react-router-dom';
 
@@ -15,9 +15,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return{
-    clearErrors: () => dispatch(receiveErrors([])),
+    clearErrors: () => dispatch(receiveReviewErrors([])),
     fetchReviews: (castleId) => dispatch(fetchReviews(castleId)),
-    createReview: (review) => dispatch(fetchReviews(review))
+    createReview: (review) => dispatch(createReview(review))
   };
 };
 
