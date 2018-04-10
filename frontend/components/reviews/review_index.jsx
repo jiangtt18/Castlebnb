@@ -15,11 +15,12 @@ class ReviewIndex extends React.Component {
                   checkin:'',
                   reviewer_id:'',
                   castle_id:'',
-                  errors: []};
+                };
 
     this.handleAddReview = this.handleAddReview.bind(this);
     this.handleCreateReview = this.handleCreateReview.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearState = this.clearState.bind(this);
   }
 
   update(property) {
@@ -43,8 +44,6 @@ class ReviewIndex extends React.Component {
       <div>
         <span>Add a review</span>
         <div>
-
-
           <h1>Describe Your Experience</h1>
           <textarea
             value={comment}
@@ -107,15 +106,23 @@ class ReviewIndex extends React.Component {
     );
   }
 
+  clearState() {
+    this.setState({showCreate: false,
+                    comment: '',
+                    accuracy: '',
+                    communication:'',
+                    cleanliness:'',
+                    location:'',
+                    value:'',
+                    checkin:'',
+                    reviewer_id:'',
+                    castle_id:'',
+                  });
+  }
+
   handleSubmit(e) {
       const castleId = parseInt(this.props.match.params.castleId);
-      if (!this.props.currentUser) {
-          return(this.setState({errors: ["Please log in to add a review"]}));
-      }
-      if (this.props.errors.length !== 0) {
-        return ;
 
-      }
 
       const reviewerId = this.props.currentUser.id;
       const review = Object.assign({}, this.state, {
@@ -123,17 +130,11 @@ class ReviewIndex extends React.Component {
     });
 
       this.props.createReview(review)
-      .then(this.setState({showCreate: false,
-                      comment: '',
-                      accuracy: '',
-                      communication:'',
-                      cleanliness:'',
-                      location:'',
-                      value:'',
-                      checkin:'',
-                      reviewer_id:'',
-                      castle_id:'',
-                      errors: []})
+      .then(() => {
+        if (this.props.errors.length === 0) {
+          this.clearState();
+        }
+      }
       );
 
   }
@@ -142,17 +143,17 @@ class ReviewIndex extends React.Component {
       this.props.clearErrors();
     }
 
-    renderErrors() {
-      return (
-        <ul>
-          {this.props.errors.map((error, i) => (
-            <li className="errors" key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
-        </ul>
-      );
-    }
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li className="errors" key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
 
   render() {
@@ -174,7 +175,6 @@ class ReviewIndex extends React.Component {
         </ul>
         <ul>
           {
-
           reviewDetails.map(review => (
               <ReviewIndexItem
                 review={review}
@@ -183,18 +183,14 @@ class ReviewIndex extends React.Component {
           ))
           }
         </ul>
-
         <button onClick={this.handleAddReview}>
           Write a review
         </button>
-          {this.state.errors}
+
           {this.renderErrors()}
           {this.handleCreateReview()}
-
       </div>
-
     );
   }
-
 }
 export default withRouter(ReviewIndex);

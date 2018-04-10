@@ -72,13 +72,13 @@ class CastleShow extends React.Component{
       );
     }
 
-    const { city, title, price, host_id, image_url,host,
+    const { city, title, price, host_id, imageUrl,host,
     bed_room,bath_room,num_guests,bath,discription} = this.props.castle;
 
     return(
       <div className='castle-show'>
         <img
-           src={image_url} alt='awesome castle pic'
+           src={imageUrl} alt='awesome castle pic'
         />
       <div className='CastleAndBooking'>
         <div className='CastleAndReview'>

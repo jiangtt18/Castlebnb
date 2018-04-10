@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default ({ currentUser, login,logout,openModal }) => {
+export default ({ currentUser, login,logout,openModal, toggleDropDown }) => {
 
   const sessionLinks = () => (
     <header className='header'>
@@ -47,6 +47,13 @@ export default ({ currentUser, login,logout,openModal }) => {
        </div>
        <ul className='right_nav'>
          <li  id= 'welcome'>Hi, {currentUser.firstname}!</li>
+         <li onClick= {toggleDropDown}> Trips </li>
+       {/*
+           <li with "Trips" onClick = openDropdown <--(props) >
+                have BookinIdxContainer Component inside "li"
+
+           */
+         }
          <li><button onClick={logout}>Log Out</button></li>
        </ul>
     </nav>

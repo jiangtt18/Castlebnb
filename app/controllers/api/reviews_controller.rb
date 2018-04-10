@@ -1,5 +1,5 @@
 class Api::ReviewsController < ApplicationController
-  # before_action :require_logged_in
+  before_action :require_logged_in, only: [:create, :destroy]
 
   def index
     @reviews = Review.where(castle_id:params[:castleId] )
@@ -32,4 +32,6 @@ class Api::ReviewsController < ApplicationController
     params.require(:review).permit(:accuracy,:communication,:cleanliness, :location,
        :value, :checkin, :comment, :castle_id,:reviewer_id,:num_reviewers)
   end
+
+
 end

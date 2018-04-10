@@ -15,6 +15,9 @@ Castle.destroy_all
 CastleImage.destroy_all
 Review.destroy_all
 
+User.create(email: 'guest@castlebnb.com', password:'password',
+   firstname:'future user', lastname:"guest")
+   
 12.times do
   User.create!(password: 'password',
      email: Faker::Internet.email,
@@ -336,7 +339,7 @@ image_url:'http://res.cloudinary.com/doohtqbau/image/upload/v1523348508/castles/
 
 
 12.times do
-  Review.create!(accuracy: rand(3..5),
+  Review.create(accuracy: rand(3..5),
     communication: rand(3..5),
     cleanliness: rand(3..5),
     value: rand(3..5),

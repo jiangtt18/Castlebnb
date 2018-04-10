@@ -9,7 +9,7 @@ class CastleIndexItem extends React.Component {
 
   render() {
 
-    const { num_guests,average_rating, id, city, title, price, image_url} = this.props.castle;
+    const { num_guests,average_rating, id, city, title, price, imageUrl} = this.props.castle;
     if (!this.props.castle) {
       return (
         <div> loading..</div>
@@ -23,7 +23,7 @@ class CastleIndexItem extends React.Component {
           className="castle-index-item"
         >
           <img
-             src={image_url} alt='awesome castle pic'
+             src={imageUrl} alt='awesome castle pic'
           />
           <div className="index-item-info">
             <p className='index-city'>{city}</p>
