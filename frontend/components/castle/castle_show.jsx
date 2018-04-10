@@ -72,12 +72,8 @@ class CastleShow extends React.Component{
       );
     }
 
-    const { city, title, price, host_id, castleImageURL,host,
+    const { city, title, price, host_id, image_url,host,
     bed_room,bath_room,num_guests,bath,discription} = this.props.castle;
-    let image_url = 'http://res.cloudinary.com/doohtqbau/image/upload/c_scale,w_172/v1522973051/Screen_Shot_2018-04-05_at_5.03.58_PM_dc9jwv.png' ;
-    if (this.props.image !== undefined) {
-      image_url = {castleImageURL}[0];
-    }
 
     return(
       <div className='castle-show'>

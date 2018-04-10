@@ -5,7 +5,7 @@ json.castle do
   :street_address,:city,:zip_code,:state,:country,:is_AV_Equipment,
   :is_ampleParking,:is_carriage,:is_wifi, :is_oceanView,
   :is_gardenView
-  json.castleImageURL @castle.images.pluck(:image_url)
+  json.castleImageURL @castle.image_url
   json.host @castle.host.firstname
   json.rating @castle.rating
   json.accuracy_avg @castle.accuracy_avg

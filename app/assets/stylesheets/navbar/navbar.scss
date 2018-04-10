@@ -67,15 +67,20 @@ nav button{
   margin-right: 20px;
   margin-top: 16px;
 }
+
 .right_nav{
   display:flex;
   width: 22%;
-  height: 55px;
+  height: 100%;
 }
 
 .right_nav li button {
   display: flex;
   width:100%;
+}
+#welcome{
+  padding:0px;
+  padding-top: 36px;
 }
 
 nav li:hover{

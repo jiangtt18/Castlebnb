@@ -9,22 +9,11 @@ class CastleIndexItem extends React.Component {
 
   render() {
 
-    const { average_rating, id, city, title, price, num_guests, castleImageId} = this.props.castle;
-    let image_url = 'http://res.cloudinary.com/doohtqbau/image/upload/c_scale,w_172/v1522973051/Screen_Shot_2018-04-05_at_5.03.58_PM_dc9jwv.png' ;
-
-
+    const { num_guests,average_rating, id, city, title, price, image_url} = this.props.castle;
     if (!this.props.castle) {
       return (
         <div> loading..</div>
-      )
-    }
-
-
-    if (castleImageId.length !== 0) {
-
-      let firstImage = castleImageId[0];
-      let singleImage = this.props.image[firstImage];
-      image_url = singleImage.image_url;
+      );
     }
 
     return (

@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
     reviews:Object.values(state.entities.reviews)
              .filter(review => review.castle_id === ownProps.match.params.castleId),
     currentUser: state.session.currentUser,
-    castle: state.entities.castles.castle[ownProps.match.params.castleId],
+    castle: state.entities.castles[ownProps.match.params.castleId],
     errors:state.errors.reviews,
   };
 };

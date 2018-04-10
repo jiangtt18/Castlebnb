@@ -10,14 +10,15 @@ class CastleIndex extends React.Component {
 
 
   render(){
+    
     if (Object.keys(this.props.castles).length === 0) {
       return (
         <p>Loading...</p>
       );
     }
 
-    const featuredCastles = Object.values(this.props.castles[0]);
-    const castleImages = this.props.castles[1];
+    const featuredCastles = Object.values(this.props.castles);
+
     return(
 
       <div>
@@ -35,7 +36,6 @@ class CastleIndex extends React.Component {
 
           <CastleIndexItem
             castle={castle}
-            image={castleImages}
             key={castle.id}
             />
 

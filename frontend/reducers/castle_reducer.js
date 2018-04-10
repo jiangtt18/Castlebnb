@@ -7,9 +7,7 @@ const castleReducer = (oldState = {}, action) => {
     case RECEIVE_CASTLES:
       return action.castles;
     case RECEIVE_CASTLE:
-      let newState = merge({}, oldState);
-      newState.castle[action.castle.id] = action.castle;
-      return newState;
+      return merge({}, oldState, {[action.castle.id]:action.castle});
     default:
       return oldState;
   }

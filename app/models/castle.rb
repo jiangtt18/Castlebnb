@@ -1,19 +1,20 @@
 class Castle < ApplicationRecord
   validates :host_id, :title, :discription,:price,:bed_room,:bath_room,
-  :num_guests,:bath,:lng,:lat,:street_address,:city,:zip_code,:state,
+ :bath,:lng,:lat,:street_address,:city,:zip_code,:state,
   :country, presence:true
 
   validates :street_address, uniqueness: true
 
-  has_many :images,
-    primary_key: :id,
-    foreign_key: :castle_id,
-    class_name: :CastleImage
+  # has_many :images,
+  #   primary_key: :id,
+  #   foreign_key: :castle_id,
+  #   class_name: :CastleImage
 
   belongs_to :host,
     primary_key: :id,
     foreign_key: :host_id,
     class_name: :User
+
 
   has_many :reviews,
     primary_key: :id,
@@ -51,6 +52,10 @@ class Castle < ApplicationRecord
        r = (accuracy_avg.to_f  + communication_avg.to_f + cleanliness_avg.to_f+
        value_avg.to_f + checkin_avg.to_f + location_avg.to_f) /6
        r.to_i
+    end
+
+    def num_guests
+      self.reviews.count(:castle_id)
     end
 
 

@@ -1,20 +1,9 @@
+
 @castles.each do |castle|
-  json.castle do
-    json.set! castle.id do
-      json.extract! castle, :id, :title, :city, :price, :num_guests
-      json.average_rating castle.rating
-      json.castleImageId castle.images.pluck(:id)
-
-    end
-
+  json.set! castle.id do
+    json.extract! castle, :id, :title, :city, :price, :lat, :lng
+    json.image_url asset_path(castle.image_url)
+    json.average_rating castle.rating
+    json.num_guests castle.num_guests
   end
-  json.images do
-    castle.images.each do |image|
-      json.set! image.id do
-        json.extract! image, :id, :castle_id, :image_url
-      end
-    end
-  end
-
-
 end

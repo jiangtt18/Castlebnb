@@ -46,7 +46,7 @@ export default ({ currentUser, login,logout,openModal }) => {
          <input className='search' type="text" placeholder=" Try Tokyo.."/>
        </div>
        <ul className='right_nav'>
-         <li >Hi, {currentUser.firstname}!</li>
+         <li  id= 'welcome'>Hi, {currentUser.firstname}!</li>
          <li><button onClick={logout}>Log Out</button></li>
        </ul>
     </nav>
