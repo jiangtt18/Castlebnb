@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
   validates :accuracy,:communication,:cleanliness, :location,
-   :value, :checkin, inclusion: { in: (1..5) }
+   :value, :checkin, inclusion: { in: (1..5) },presence: true
   # validate :allow_review
 
  belongs_to :castle,

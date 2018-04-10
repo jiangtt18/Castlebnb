@@ -7,10 +7,15 @@ import ReviewIndexContainer from '../reviews/review_container';
 class CastleShow extends React.Component{
   constructor(props){
     super(props);
+
+    this.state = { loading: true };
   }
 
   componentDidMount(){
-    this.props.fetchCastle(this.props.match.params.castleId);
+    this.props.fetchCastle(this.props.match.params.castleId)
+              .then(() => {
+                this.setState({ loading: false });
+              });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -61,7 +66,7 @@ class CastleShow extends React.Component{
 
     let a = this.props.castle;
 
-    if (!this.props.castle) {
+    if (this.state.loading) {
       return (
         <p>Loading...</p>
       );
@@ -111,8 +116,9 @@ class CastleShow extends React.Component{
       </div>
 
       <ReviewIndexContainer
-         review = {this.props.review}
-         />
+         review = {this.props.review}/>
+
+
     </div>
     );
 

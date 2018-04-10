@@ -2,8 +2,8 @@ class Api::ReviewsController < ApplicationController
   # before_action :require_logged_in
 
   def index
-    @reviews = Review.where(castle_id:2 )
-    # params[:castleId]
+    @reviews = Review.where(castle_id:params[:castleId] )
+    #
       if @reviews
        render :index
       else

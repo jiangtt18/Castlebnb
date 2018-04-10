@@ -16,11 +16,14 @@ json.castle do
   json.location_avg @castle.location_avg
 end
 
+json.reviews({})
+
 json.reviews do
   @castle.reviews.each do |review|
     json.set! review.id do
       json.extract! review, :id, :castle_id, :comment, :created_at,
       :reviewer_id
+      json.reviewerName review.reviewer.firstname
     end
   end
 end
