@@ -35,8 +35,8 @@ export const receiveBookingErrors = (errors) => {
 };
 
 
-export const fetchBookings = (currentUserId) => dispatch => (
-  BookingAPI.fetchBookings(currentUserId)
+export const fetchBookings = (guestId) => dispatch => (
+  BookingAPI.fetchBookings(guestId)
   .then(
     (bookings) => dispatch(receiveBookings(bookings)),
     (errors) =>dispatch(receiveBookingErrors(errors.responseJSON))

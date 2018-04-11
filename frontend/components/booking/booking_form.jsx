@@ -34,7 +34,7 @@ class BookingForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-      if(this.state.startDate || this.state.endDate){
+
       if(this.props.currentUser){
         this.state.guestId = this.props.currentUser.id;
       }
@@ -42,8 +42,8 @@ class BookingForm extends React.Component {
       let fetchInfo = {
         guest_id: this.state.guestId,
         castle_id: this.state.castleId,
-        check_in: this.state.startDate._d,
-        check_out: this.state.endDate._d,
+        check_in: this.state.startDate ? this.state.startDate._d : this.state.startDate,
+        check_out: this.state.endDate ? this.state.endDate._d : this.state.endDate,
         num_guests:this.state.numGuests
       };
 
@@ -51,12 +51,7 @@ class BookingForm extends React.Component {
         this.props.clearBookingErrors();
       });
 
-    } else {
-      return (
-        <div>
-          <h1>please select date</h1>
-        </div>);
-    }
+
   }
 
 

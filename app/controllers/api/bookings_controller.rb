@@ -2,10 +2,11 @@ class Api::BookingsController < ApplicationController
   before_action :require_logged_in
 
   def index
-     @bookings = Booking.where(guest_id: params[guestId])
 
-     if @bookings
-       render :index
+    user = User.find_by(id: params[:guestId])
+
+     if user
+       @bookings = user.trips
      else
        render json: ["Your honeymoon trip is wating for you"], status:404
      end

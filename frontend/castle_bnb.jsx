@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import {fetchReviews} from './utils/review_util';
-import {receiveReviews} from './actions/review_action';
+import {fetchBookings} from './utils/booking_util';
+import {receiveBookings} from './actions/booking_actions';
 
 
 document.addEventListener('DOMContentLoaded',()=>{
@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded',()=>{
   window.store = store;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchReviews = fetchReviews;
-  window.receiveReviews = receiveReviews;
+  window.fetchBookings = fetchBookings;
+  window.receiveBookings = receiveBookings;
 
   ReactDOM.render(<Root store={store} />, root);
 

@@ -3,7 +3,7 @@ class Booking < ApplicationRecord
   presence: true
 
   validate :validate_num_guests
-  validate :validate_date_type
+  # validate :validate_date_type
 
   belongs_to :host,
   primary_key: :id,
@@ -27,11 +27,11 @@ class Booking < ApplicationRecord
     end
   end
 
-  def validate_date_type
-    if !check_in || !check_out
-      errors[:date] << ": please select dates"
-    end
-  end
+  # def validate_date_type
+  #   if !check_in || !check_out
+  #     errors[:date] << ": please select dates"
+  #   end
+  # end
 
 
 end

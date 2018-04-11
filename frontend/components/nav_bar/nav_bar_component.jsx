@@ -1,7 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import GuestBooking from '../booking/booking_index_component';
 
-export default ({ currentUser, login,logout,openModal, toggleDropDown }) => {
+export default ({ currentUser,
+  login,logout,
+  openModal,
+  toggleDropDown,
+  showBooking,
+  fetchMyTrips,
+  trips,
+  deleteTrip
+  }) => {
 
   const sessionLinks = () => (
     <header className='header'>
@@ -38,7 +47,7 @@ export default ({ currentUser, login,logout,openModal, toggleDropDown }) => {
   const personalGreeting = () => (
 
 
-   <header className='header'>
+  <header className='header'>
      <nav className="header_nav">
        <div className='left_nav'>
            <a href='#'><img src={staticAssets.logo} alt='logo'/>
@@ -47,7 +56,14 @@ export default ({ currentUser, login,logout,openModal, toggleDropDown }) => {
        </div>
        <ul className='right_nav'>
          <li  id= 'welcome'>Hi, {currentUser.firstname}!</li>
-         <li onClick= {toggleDropDown}> Trips </li>
+         <li onClick= {toggleDropDown}> Trips
+           <GuestBooking
+             show = {showBooking}
+             trips = {trips}
+             fetchMyTrips = {fetchMyTrips}
+             deleteTrip = {deleteTrip}
+             currentUser = {currentUser}/>
+         </li>
        {/*
            <li with "Trips" onClick = openDropdown <--(props) >
                 have BookinIdxContainer Component inside "li"
@@ -65,7 +81,5 @@ export default ({ currentUser, login,logout,openModal, toggleDropDown }) => {
    personalGreeting(currentUser, logout) :
    sessionLinks()
  );
-
-
 
 };
