@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import {fetchBookings} from './utils/booking_util';
+import {fetchCastles} from './utils/castle_util';
 import {receiveBookings} from './actions/booking_actions';
 
 
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   window.store = store;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchBookings = fetchBookings;
+  window.fetchCastles = fetchCastles;
   window.receiveBookings = receiveBookings;
 
   ReactDOM.render(<Root store={store} />, root);

@@ -6,6 +6,7 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import {AuthRoute, ProtectedRoute} from '../utils/route_util';
 import CastleIndexContainer from './castle/castle_index_container';
 import CastleShowContainer from './castle/castle_show_container';
+import SearchContainer from './search/search_container';
 
 
 const App = () => (
@@ -14,9 +15,10 @@ const App = () => (
     <NavBarContainer />
 
     <Switch>
+      <Route path="/search" component={SearchContainer} />
       <Route path="/castles/:castleId" component={CastleShowContainer} />
       <Route path="/" component={CastleIndexContainer} />
-    </Switch>
+  </Switch>
   </div>
 );
 

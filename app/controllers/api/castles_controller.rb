@@ -1,7 +1,8 @@
 class Api::CastlesController < ApplicationController
 
   def index
-      @castles = Castle.all.order(id: :asc).limit(18)
+    @castles = bounds ? Castle.in_bounds(bounds) : Castle.all.order(id: :asc).limit(18)
+      # @castles = Castle.all.order(id: :asc).limit(18)
   end
 
 
@@ -36,6 +37,10 @@ class Api::CastlesController < ApplicationController
       :street_address,:city,:zip_code,:state,:country,:is_AV_Equipment,
       :is_ampleParking,:is_carriage,:is_wifi, :is_oceanView,
       :is_gardenView)
+  end
+
+  def bounds
+   params[:bounds]
   end
 
 end

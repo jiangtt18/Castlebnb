@@ -74,9 +74,7 @@ class Castle < ApplicationRecord
   end
 
 
-  def self.find_by_keyword(keyword)
-   self.where("lower(city) like ?", "%#{keyword.downcase}%");
- end
+  
 
 
 end

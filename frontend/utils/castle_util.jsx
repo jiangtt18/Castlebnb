@@ -1,8 +1,8 @@
-export const fetchCastles = featuredCastles => {
+export const fetchCastles = filters => {
   return $.ajax({
     method: "GET",
     url: "/api/castles",
-    data: {featuredCastles},
+    data: {filters},
   });
 };
 

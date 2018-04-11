@@ -4,11 +4,13 @@ import { withRouter } from 'react-router-dom';
 
 
 class CastleMap extends React.Component {
+ componentDidMount(){
 
+ }
 render() {
     return (
       <div>
-        <div id='map-container' ref='map'>Map</div>
+        <div id='map' ref='map'>Map</div>
       </div>
     );
   }
