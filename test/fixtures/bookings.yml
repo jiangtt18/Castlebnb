@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guiest_id: 1
+  castle_id: 1
+  check_in: MyString
+  check_out: MyString
+  num_guests: 1
+  status: MyString
+
+two:
+  guiest_id: 1
+  castle_id: 1
+  check_in: MyString
+  check_out: MyString
+  num_guests: 1
+  status: MyString

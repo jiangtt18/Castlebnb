@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180410080146) do
+ActiveRecord::Schema.define(version: 20180411052622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "check_in", null: false
+    t.date "check_out", null: false
+    t.integer "num_guests", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "castle_id"
+    t.integer "guest_id"
+  end
 
   create_table "castle_images", force: :cascade do |t|
     t.integer "castle_id", null: false
@@ -48,6 +58,7 @@ ActiveRecord::Schema.define(version: 20180410080146) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_url"
+    t.integer "max_guests"
     t.index ["city"], name: "index_castles_on_city"
     t.index ["country"], name: "index_castles_on_country"
     t.index ["state"], name: "index_castles_on_state"

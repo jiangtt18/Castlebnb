@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import Modal from './modal/modal';
 import NavBarContainer from './nav_bar/nav_bar_container';
 import {AuthRoute, ProtectedRoute} from '../utils/route_util';
-import{BookContianer} from './booking/book_container';
 import CastleIndexContainer from './castle/castle_index_container';
 import CastleShowContainer from './castle/castle_show_container';
 

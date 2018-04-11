@@ -35,8 +35,8 @@ export const receiveBookingErrors = (errors) => {
 };
 
 
-export const fetchBookings = (castleId) => dispatch => (
-  BookingAPI.fetchBookings(castleId)
+export const fetchBookings = (currentUserId) => dispatch => (
+  BookingAPI.fetchBookings(currentUserId)
   .then(
     (bookings) => dispatch(receiveBookings(bookings)),
     (errors) =>dispatch(receiveBookingErrors(errors.responseJSON))
@@ -44,15 +44,15 @@ export const fetchBookings = (castleId) => dispatch => (
 );
 
 
-export const createbooking = booking => dispatch => (
-  BookingAPI.createbooking(booking)
+export const createBooking = booking => dispatch => (
+  BookingAPI.createBooking(booking)
     .then(
       (resbooking) =>  dispatch(receiveBooking(resbooking)),
       (errors) => dispatch(receiveBookingErrors(errors.responseJSON))
     )
 );
 
-export const deletebooking = id => dispatch =>(
+export const deleteBooking = id => dispatch =>(
   BookingAPI.deleteBooking(id)
     .then(() => dispatch(removeBooking(id)))
 );

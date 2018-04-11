@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import ReviewIndexContainer from '../reviews/review_container';
+import BookingForm from '../booking/booking_form';
 
 
 
@@ -73,7 +74,7 @@ class CastleShow extends React.Component{
     }
 
     const { city, title, price, host_id, imageUrl,host,
-    bed_room,bath_room,num_guests,bath,discription} = this.props.castle;
+    bed_room,bath_room,max_guests,bath,discription, num_guests} = this.props.castle;
 
     return(
       <div className='castle-show'>
@@ -87,7 +88,7 @@ class CastleShow extends React.Component{
                 <h3>{title}</h3>
                 <p>{city}</p>
                 <p>
-                  <span>{num_guests} guests</span>
+                  <span>{max_guests} guests</span>
                   <span>{bed_room} bedrooms</span>
                   <span>{bath_room} bathrooms</span>
                   <span>{bath} baths</span>
@@ -112,8 +113,16 @@ class CastleShow extends React.Component{
       </div>
 
       <ReviewIndexContainer
-         review = {this.props.review}/>
+         review = {this.props.review}
+      />
 
+    <BookingForm
+          castle={this.props.castle}
+          clearBookingErrors={this.props.clearBookingErrors}
+          currentUser={this.props.currentUser}
+          createBooking={this.props.createBooking}
+          errors = {this.props.bookingErrors}
+        />
 
     </div>
     );

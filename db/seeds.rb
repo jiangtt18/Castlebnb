@@ -14,10 +14,11 @@ User.destroy_all
 Castle.destroy_all
 CastleImage.destroy_all
 Review.destroy_all
+Booking.destroy_all
 
 User.create(email: 'guest@castlebnb.com', password:'password',
    firstname:'future user', lastname:"guest")
-   
+
 12.times do
   User.create!(password: 'password',
      email: Faker::Internet.email,
@@ -34,6 +35,7 @@ end
    host_id: 1,
    title: 'asymetrical beauty',
    street_address: Faker::Address.street_address,
+   max_guests:10,
    city: Faker::Address.city,
    state: Faker::Address.state,
    zip_code: Faker::Address.zip_code,
@@ -59,6 +61,7 @@ end
    host_id: 2,
    title: 'top of clouds',
    street_address: Faker::Address.street_address,
+   max_guests:100,
    city: Faker::Address.city,
    state: Faker::Address.state,
    zip_code: Faker::Address.zip_code,
@@ -83,6 +86,7 @@ end
    host_id: 3,
    title: 'secret garden',
    street_address: Faker::Address.street_address,
+   max_guests:40,
    city: Faker::Address.city,
    state: Faker::Address.state,
    zip_code: Faker::Address.zip_code,
@@ -108,6 +112,7 @@ end
    host_id: 4,
    title: 'winterfell',
    street_address: Faker::Address.street_address,
+   max_guests:40,
    city: Faker::Address.city,
    state: Faker::Address.state,
    zip_code: Faker::Address.zip_code,
@@ -133,6 +138,7 @@ end
    host_id: 5,
    title: 'edge of the world',
    street_address: Faker::Address.street_address,
+   max_guests:50,
    city: Faker::Address.city,
    state: Faker::Address.state,
    zip_code: Faker::Address.zip_code,
@@ -158,6 +164,7 @@ end
    host_id: 6,
    title: 'float on the water',
    street_address: Faker::Address.street_address,
+   max_guests:60,
    city: Faker::Address.city,
    state: Faker::Address.state,
    zip_code: Faker::Address.zip_code,
@@ -182,6 +189,7 @@ end
    host_id: 7,
    title: 'garden love',
    street_address: Faker::Address.street_address,
+   max_guests:70,
    city: Faker::Address.city,
    state: Faker::Address.state,
    zip_code: Faker::Address.zip_code,
@@ -206,6 +214,7 @@ end
    host_id: 8,
    title: 'MiddleEast Castle',
    street_address: Faker::Address.street_address,
+   max_guests:80,
    city: Faker::Address.city,
    state: Faker::Address.state,
    zip_code: Faker::Address.zip_code,
@@ -231,6 +240,7 @@ end
  host_id: 9,
  title: 'Elegent Castle',
  street_address: Faker::Address.street_address,
+ max_guests:90,
  city: Faker::Address.city,
  state: Faker::Address.state,
  zip_code: Faker::Address.zip_code,
@@ -257,6 +267,7 @@ Castle.create(
 host_id: 10,
 title: 'Wonderland',
 street_address: Faker::Address.street_address,
+max_guests:100,
 city: Faker::Address.city,
 state: Faker::Address.state,
 zip_code: Faker::Address.zip_code,
@@ -282,6 +293,7 @@ Castle.create(
 host_id: 11,
 title: 'German Castle',
 street_address: Faker::Address.street_address,
+max_guests:11,
 city: Faker::Address.city,
 state: Faker::Address.state,
 zip_code: Faker::Address.zip_code,
@@ -307,6 +319,7 @@ Castle.create(
 host_id: 12,
 title: 'No Name Castle',
 street_address: Faker::Address.street_address,
+max_guests:300,
 city: Faker::Address.city,
 state: Faker::Address.state,
 zip_code: Faker::Address.zip_code,
@@ -349,4 +362,7 @@ image_url:'http://res.cloudinary.com/doohtqbau/image/upload/v1523348508/castles/
     castle_id: rand(1..12),
     reviewer_id:rand(1..6)
   )
+
+
+
 end

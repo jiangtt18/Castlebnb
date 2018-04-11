@@ -4,7 +4,7 @@ json.castle do
   :price,:bed_room,:bath_room,:num_guests,:bath,:lng,:lat,
   :street_address,:city,:zip_code,:state,:country,:is_AV_Equipment,
   :is_ampleParking,:is_carriage,:is_wifi, :is_oceanView,
-  :is_gardenView
+  :is_gardenView, :max_guests
   json.imageUrl @castle.image_url
   json.host @castle.host.firstname
   json.rating @castle.rating

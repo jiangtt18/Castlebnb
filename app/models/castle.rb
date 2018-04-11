@@ -1,6 +1,6 @@
 class Castle < ApplicationRecord
   validates :host_id, :title, :discription,:price,:bed_room,:bath_room,
- :bath,:lng,:lat,:street_address,:city,:zip_code,:state,
+ :bath,:lng,:lat,:street_address,:city,:zip_code,:state, :max_guests,
   :country, presence:true
 
   validates :street_address, uniqueness: true
@@ -13,14 +13,20 @@ class Castle < ApplicationRecord
   belongs_to :host,
     primary_key: :id,
     foreign_key: :host_id,
-    class_name: :User
+    class_name: :User,
+    optional: true
+
 
 
   has_many :reviews,
-    primary_key: :id,
-    foreign_key: :castle_id,
-    class_name: :Review
+  primary_key: :id,
+  foreign_key: :castle_id,
+  class_name: :Review
 
+  has_many :bookings,
+  primary_key: :id,
+  foreign_key: :listing_id,
+  class_name: :Booking
 
     def accuracy_avg
      self.reviews.average(:accuracy) || '0'

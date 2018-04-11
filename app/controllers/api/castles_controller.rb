@@ -4,7 +4,7 @@ class Api::CastlesController < ApplicationController
       @castles = Castle.all.order(id: :asc).limit(18)
   end
 
-  
+
 
   def show
     @castle = Castle.find(params[:id])
