@@ -13,7 +13,7 @@ class BookingForm extends React.Component {
       startDate: null,
       endDate: null,
       focusedInput:null,
-      numGuests:0
+      numGuests:null,
     };
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

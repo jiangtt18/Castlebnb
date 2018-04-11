@@ -7,7 +7,6 @@ class GuestBooking extends React.Component{
 
   componentDidMount() {
     // debugger;{/* did not hit this line */}
-    console.log('didmount')
    this.props.fetchMyTrips(this.props.currentUser.id);
 
   }
@@ -28,7 +27,7 @@ render() {
   if(this.props.trips === undefined){
     return (<p>loading</p>);
   }
-  if (Object.keys(this.props.trips).length === 0 && (this.props.currentUser)) {
+  if (Object.keys(this.props.trips).length === 0 ) {
     return(
     <div >
       You have no upcoming trips.
@@ -36,7 +35,7 @@ render() {
     </div>
   );
 
-  } else if (this.props.currentUser) {
+  } else  {
     return(
       <div>
         <div >
@@ -44,8 +43,6 @@ render() {
         </div>
       </div>
     );
-  } else {
-    return <div className="not-logged-in">You must be logged in to view your bookings!</div>;
   }
 }
 }
