@@ -19,6 +19,7 @@ const mapDispatchToProps = (dispatch) => ({
   toggleDropDown: () => dispatch(toggleDropDown()),
   fetchMyTrips: (guestId) => dispatch(fetchBookings(guestId)),
   deleteTrip: (id) => dispatch(deleteBooking(id))
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

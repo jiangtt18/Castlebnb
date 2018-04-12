@@ -19,7 +19,11 @@ export default ({ currentUser,
 
           <a href='#'><img src={staticAssets.logo} alt='logo'/>
           </a>
-        <input className='search' type="text" placeholder=" Try Tokyo.."/>
+        <form>
+        <input
+          onChange=
+          className='search' type="text" placeholder=" Try Tokyo.."/>
+        </form>
       </div>
       <ul >
         <li><button
@@ -52,7 +56,10 @@ export default ({ currentUser,
        <div className='left_nav'>
            <a href='#'><img src={staticAssets.logo} alt='logo'/>
            </a>
-         <input className='search' type="text" placeholder=" Try Tokyo.."/>
+          <form >
+            <input className='search' type="text" placeholder=" Try Tokyo.."/>
+          </form>
+           >
        </div>
        <ul className='right_nav'>
          <li  id= 'welcome'>Hi, {currentUser.firstname}!</li>
