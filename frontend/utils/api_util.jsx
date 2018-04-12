@@ -17,21 +17,6 @@ export const initMap = () => {
     disableDefaultUI: true
   });
 
-  // map.setOptions({
-  //   styles: [
-  //     {
-  //       featureType: "poi",
-  //       stylers: [{ visibility: "off" }]
-  //     },
-  //     {
-  //       featureType: "transit",
-  //       elementType: "labels.icon",
-  //       stylers: [{ visibility: "off" }]
-  //     }
-  //   ]
-  // });
-
-
 
    map.addListener("click", e => {
     placeMarker(e.latLng, map);
