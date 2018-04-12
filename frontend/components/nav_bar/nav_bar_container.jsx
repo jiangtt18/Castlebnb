@@ -5,6 +5,8 @@ import { logout , login} from '../../actions/session_action';
 import { openModal } from '../../actions/modal_actions';
 import { toggleDropDown } from '../../actions/drop_down_action';
 import { fetchBookings, deleteBooking } from '../../actions/booking_actions';
+import {searchCastles} from '../../actions/castle_actions';
+
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
@@ -18,7 +20,8 @@ const mapDispatchToProps = (dispatch) => ({
   openModal: modal => dispatch(openModal(modal)),
   toggleDropDown: () => dispatch(toggleDropDown()),
   fetchMyTrips: (guestId) => dispatch(fetchBookings(guestId)),
-  deleteTrip: (id) => dispatch(deleteBooking(id))
+  deleteTrip: (id) => dispatch(deleteBooking(id)),
+  searchCastles: (params) => dispatch(searchCastles(params))
 
 });
 

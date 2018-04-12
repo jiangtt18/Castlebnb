@@ -10,7 +10,7 @@ class CastleIndex extends React.Component {
 
 
   render(){
-    
+
     if (Object.keys(this.props.castles).length === 0) {
       return (
         <p>Loading...</p>

@@ -73,8 +73,20 @@ class Castle < ApplicationRecord
         .where("lng < ?", bounds[:northEast][:lng])
   end
 
+#google map bounds will be in the following format:
+ # {
+ #   "northEast"=> {"lat"=>"37.80971", "lng"=>"-122.39208"},
+ #   "southWest"=> {"lat"=>"37.74187", "lng"=>"-122.47791"}
+ # }
 
-  
+
+def self.search(search_query)
+  p "======================"
+  p search_query
+  p "======================"
+  search_query = "%#{search_query.downcase}%"
+  self.where('lower(city) LIKE ?', search_query)
+end
 
 
 end

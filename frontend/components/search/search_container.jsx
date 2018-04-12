@@ -1,20 +1,20 @@
 import React from 'react';
 import Search from './search';
 import { connect } from 'react-redux';
-import { fetchCastles } from '../../actions/castle_actions';
+import { fetchCastles,searchCastles} from '../../actions/castle_actions';
 import { updateFilter } from '../../actions/filter_actions';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
 
   return({
     castles: state.entities.castles,
-
+    query: ownProps.match.params.search_query
   });
 };
 
 const mapDispatchToProps = dispatch => {
   return({
-    updateFilters: (filter, value) => dispatch(updateFilter(filter, value))
+     searchCastles: (params) => dispatch(searchCastles(params)),
   });
 };
 
@@ -22,3 +22,4 @@ export default connect(mapStateToProps, mapDispatchToProps)(Search);
 
 
 // Guests: state.ui.filter.maxGuests,
+// updateFilter: (filter, value) => dispatch(updateFilter(filter, value))

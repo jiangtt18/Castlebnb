@@ -1,48 +1,67 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
-import {initMap, codeAddress} from '/Users/TTJ/Documents/appAcademy/bootcamp/airbnb/frontend/utils/api_util.jsx';
+import MarkerManager from '../../utils/marker_manager';
 
+const getCoordsObj = latLng => ({
+  lat: latLng.lat(),
+  lng: latLng.lng()
+});
+
+const mapOptions = {
+  center: {
+    lat: 37.773972,
+    lng: -122.431297
+  }, // San Francisco coords
+  zoom: 13
+};
 
 class CastleMap extends React.Component {
-    constructor(props){
-      super(props);
-      this.state = {
-        location:''
-      }
 
-      this.handleChangeSearchBar = this.handleChangeSearchBar.bind(this);
-    }
-    componentDidMount() {
-   // set the map to show SF
-   const mapOptions = {
-     center: { lat: 37.7758, lng: -122.435 }, // this is SF
-     zoom: 13
-   };
+  componentDidMount() {
 
-   // wrap the mapDOMNode in a Google Map
-
-  initMap() ;
- }
+    const map = this.refs.map;
+    this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
 
 
-handleChangeLocation(){
-  codeAddress(this.state.location);
-}
-
-handleChangeSearchBar(e){
-  this.setState({location: e.target.value});
-}
+      this.map = new google.maps.Map(map, mapOptions);
+      this.registerListeners();
+      this.MarkerManager.updateMarkers(this.props.castles);
 
 
-render() {
+  }
+
+  componentWillReceiveProps(){
+
+  }
+
+
+  registerListeners() {
+    google.maps.event.addListener(this.map, 'idle', () => {
+      const { north, south, east, west } = this.map.getBounds().toJSON();
+      const bounds = {
+        northEast: { lat:north, lng: east },
+        southWest: { lat: south, lng: west } };
+      this.props.updateFilter('bounds', bounds);
+    });
+
+  }
+
+  handleMarkerClick(castle) {
+    this.props.history.push(`castles/${castle.id}`);
+  }
+
+
+
+
+  render() {
     return (
-      <div>
-         <div id='map'>map</div>
-         
+      <div className="map" ref="map">
+        Map
       </div>
     );
   }
+
 }
 
 export default withRouter(CastleMap);

@@ -16,9 +16,10 @@ const App = () => (
     <NavBarContainer />
 
     <Switch>
-      <Route path="/search" component={SearchContainer} />
+      // <Route exact path="/search/:search_query" component={SearchContainer} />
+      <Route path="/search/" component={SearchContainer} />
       <Route path="/castles/:castleId" component={CastleShowContainer} />
-      <Route path="/" component={CastleIndexContainer} />
+      <Route exact path="/" component={CastleIndexContainer} />
     </Switch>
 
     <Footer />

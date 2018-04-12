@@ -12,3 +12,11 @@ export const fetchCastle = id => {
     url: `/api/castles/${id}`,
   });
 };
+
+export const searchCastles = (searchQuery) => {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/castles',
+    data: { search:{search_words:searchQuery}}
+  });
+};

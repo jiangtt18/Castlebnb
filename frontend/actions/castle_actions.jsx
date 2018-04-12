@@ -2,6 +2,9 @@ import * as CastleAPI from '../utils/castle_util';
 export const RECEIVE_CASTLES = "RECEIVE_CASTLES";
 export const RECEIVE_CASTLE = "RECEIVE_CASTLE";
 export const RECEIVE_CASTLE_ERRORS = "RECEIVE_CASTLE_ERRORS";
+export const SEARCH_CASTLES = 'SEARCH_CASTLES';
+
+
 
 export const receiveCastles = (castles) => {
   return ({
@@ -43,3 +46,10 @@ export const fetchCastle = id => dispatch => (
     errors => dispatch(receiveCastleErrors(errors.responseJSON))
   )
 );
+
+
+export const searchCastles = searchQuery => dispatch => {
+  return CastleAPI.searchCastles(searchQuery).then(searchResult =>
+    dispatch(receiveCastles(searchResult)),
+    errors => dispatch(receiveCastleErrors(errors.responseJSON)));
+};

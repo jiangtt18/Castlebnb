@@ -4,55 +4,51 @@ import Geosuggest from 'react-geosuggest';
 
 class SearchBar extends React.Component {
   constructor(props) {
+
     super(props);
+    this.state = {
+      city:''
+    };
     this.handleDestination = this.handleDestination.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleDestination(value) {
-    if (value && value.location) {
-      this.props.router.push({
-        pathname: "/search",
-        query: {
-          lat: value.location.lat,
-          lng: value.location.lng
-        }});
-    }
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.searchCastles(this.state.city)
+    .then(this.props.history.push('/search'));
+
   }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
+
+  handleDestination(value) {
+    console.log(value);
+    const lat = value.location.lat;
+    const lng = value.location.lng;
+
+    if (value && value.location) {
+      this.props.history.push(`/search/?lat=${lat}&lng=${lng}`);
+    }
+ }
 
   render() {
 
-    let searchStyle = {
-      'input': {
-        width: '100%',
-        height: '60px',
-        padding: '0px',
-        'paddingLeft': '20px',
-        'paddingTop': '2px',
-        'fontSize': '13px'
-      },
-      'input:focus': {
-        'boxShadow': '0px 0px 0px',
-        '-webkit-box-shadow': '0px 0px 0px',
-        border: '0px'
-      },
-      'suggests': {
-        'marginTop': '1px',
-        'width': 'calc(100% + 1px)'
-      },
-    };
-
     return (
-      <div className="search-bar">
-        <Geosuggest
-          className="search-input"
-          placeholder="Where to?"
-          id="top-bar"
-          style={searchStyle}
-          onSuggestSelect={this.handleDestination}
+      <form className = 'top-bar' onSubmit={this.handleSubmit}>
+        <input
+          value={this.state.city}
+          placeholder="Try Tokyo..."
+          onChange ={this.update('city')}
         />
-      </div>
+      </form>
     );
-  }
+}
 }
 
 export default withRouter(SearchBar);

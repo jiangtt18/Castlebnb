@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,withRouter } from 'react-router-dom';
 import GuestBooking from '../booking/booking_index_component';
-import searchBar from '../search/search_bar';
-import Geosuggest from 'react-geosuggest';
+import SearchBar from '../search/search_bar';
 
 class NavBar extends React.Component{
   constructor(props){
@@ -17,6 +16,7 @@ class NavBar extends React.Component{
       this.setState({[property]: e.target.value});
     };
   }
+
 
   render(){
     const {currentUser,
@@ -35,10 +35,10 @@ class NavBar extends React.Component{
         <nav className="header_nav">
           <div className='left_nav'>
 
-            <a href='#'><img src={staticAssets.logo} alt='logo'/>
+          <a href='#'><img src={staticAssets.logo} alt='logo'/>
           </a>
-
-
+          <SearchBar
+            searchCastles={this.props.searchCastles} />
         </div>
         <ul >
           <li><button
@@ -73,7 +73,8 @@ class NavBar extends React.Component{
             <input className='search' type="text" placeholder=" Try Tokyo.."/>
           </form>*/}
 
-
+          <SearchBar
+            searchCastles={this.props.searchCastles}/>
 
         </div>
         <ul className='right_nav'>
@@ -106,4 +107,4 @@ class NavBar extends React.Component{
 
 }
 
-export default NavBar;
+export default withRouter(NavBar);
