@@ -15,7 +15,7 @@ class Api::ReviewsController < ApplicationController
     @review = Review.new(review_params)
 
     if @review.save
-      render  "api/reviews/show";
+      render "api/reviews/show"
     else
       render json: @review.errors.full_messages, status: :unprocessable_entity
     end

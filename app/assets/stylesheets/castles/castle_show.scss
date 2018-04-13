@@ -3,8 +3,15 @@
 .castle-show img {
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 50% 30%;
+  height: 360px !important;
+}
+
+.castle-image {
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: 50% 50%;
-  height: 368px !important;
+  height: 400px;
 }
 
 .content {

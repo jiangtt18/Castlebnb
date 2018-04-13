@@ -1,7 +1,8 @@
 
 import React from 'react';
-import { Link } from 'react-router';
+import { Link , withRouter} from 'react-router';
 import MarkerManager from '../../utils/marker_manager';
+import queryString from 'query-string';
 
 const _getCoordsObj = latLng => ({
   lat: latLng.lat(),
@@ -10,74 +11,49 @@ const _getCoordsObj = latLng => ({
 
 class Map extends React.Component {
   constructor(props) {
+    debugger;
     super(props);
   }
 
-  componentDidMount () {
-    const mapDOMNode = this.refs.map;
-
-    const address = 'tokyo';
-
-    // const geocoder = new google.maps.Geocoder();
-    // const geocodeCallback =
-    // const that = this;
-
-    const defaultOptions = {
-      zoom: 13,
-      center: { lng: 35.6895, lat: 139.6917 },
+  componentDidMount() {
+    let mapOptions = {
+      center: { lat: 25, lng:-43 },
+      zoom:2
     };
 
-    this.map = new google.maps.Map(mapDOMNode, defaultOptions);
-    this.MarkerManager = new MarkerManager(this.map);
-    this.MarkerManager.updateMarkers(this.props.castles);
+    debugger;
 
-    // const geocodeCallback = (results, status) => {
-    //   if (status == google.maps.GeocoderStatus.OK) {
-    //     const Lat = results[0].geometry.location.lat();
-    //     const Lng = results[0].geometry.location.lng();
-    //     const myOptions = {
-    //       zoom: 11,
-    //       center: new google.maps.LatLng(Lat, Lng)
-    //     };
-    //
-    //     this.map.setOptions(myOptions);
-    //     this.map.updateMarkers(this.props.castles);
-    //       // document.getElementById("map_canvas"), myOptions);
-    //   }
-    // };
-    //
-    // geocoder.geocode({ address }, geocodeCallback);
+    if(this.props.location){
+      const center = queryString.parse(this.props.location.search);
+      const lat = parseFloat(center.lat);
+      const lng = parseFloat(center.lng);
+      const parsedCenter = {lat: lat, lng:lng};
+        mapOptions = {
+          center: parsedCenter,
+          zoom:12
+        };
+    }
 
-    // let mapOptions;
-    // if(this.props.castle. lat !== "" && this.props.lat !== undefined) {
-    //   mapOptions = {
-    //     center: {lat: parseFloat(this.props.castle.lat), lng: parseFloat(this.props.castle.lng)},
-    //     zoom: 0
-    //   };
-    // }
-    // else {
-    //   mapOptions = {
-    //     center: { lng: 35.6895, lat: 139.6917 },
-    //     zoom: 0
-    //   };
-    // }
-    // this.map = new google.maps.Map(mapDOMNode, mapOptions);
+    const map = this.refs.map;
+    this.map = new google.maps.Map(map, mapOptions);
+    this.MarkerManager = new MarkerManager(this.map, this._handleMarkerClick.bind(this));
     this._registerListeners();
+    this.MarkerManager.updateMarkers(this.props.castles);
 
   }
 
   componentDidUpdate() {
-    this.MarkerManager && this.MarkerManager.updateMarkers(this.props.castles);
+     this.MarkerManager.updateMarkers(this.props.castles);
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.lat !== newProps.lat && this.props.lng !== newProps.lng){
-      this.map.setOptions({
-        center: {lat: parseFloat(newProps.lat), lng: parseFloat(newProps.lng)},
-        zoom: 13
-      });
-    }
-  }
+  // componentWillReceiveProps(newProps) {
+  //   if (this.props.lat !== newProps.lat && this.props.lng !== newProps.lng){
+  //     this.map.setOptions({
+  //       center: {lat: parseFloat(newProps.lat), lng: parseFloat(newProps.lng)},
+  //       zoom: 13
+  //     });
+  //   }
+  // }
 
   _registerListeners() {
     google.maps.event.addListener(this.map, 'idle', () => {
@@ -85,12 +61,12 @@ class Map extends React.Component {
       const bounds = {
         northEast: { lat:north, lng: east },
         southWest: { lat: south, lng: west } };
-      this.props.updateFilter('bound', bounds);
+      this.props.updateFilter('bounds', bounds);
     });
   }
 
   _handleMarkerClick(castle) {
-    this.props.router.push(`castles/${castle.id}`);
+    this.props.history.push(`castles/${castle.id}`);
   }
 
   render() {
@@ -103,4 +79,4 @@ class Map extends React.Component {
   }
 }
 
-export default Map
+export default withRouter(Map)

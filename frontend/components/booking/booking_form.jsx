@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { withRouter } from 'react-router';
 import 'react-dates/initialize';
 import { DateRangePicker } from 'react-dates';
+import { isEmpty } from 'lodash';
 
 class BookingForm extends React.Component {
   constructor(props) {
@@ -35,23 +36,26 @@ class BookingForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
 
-      if(this.props.currentUser){
-        this.state.guestId = this.props.currentUser.id;
-      }
+    if (isEmpty(this.props.currentUser)) {
+      this.props.openModal();
+      return;
+    }
 
-      let fetchInfo = {
-        guest_id: this.state.guestId,
-        castle_id: this.state.castleId,
-        check_in: this.state.startDate ? this.state.startDate._d : this.state.startDate,
-        check_out: this.state.endDate ? this.state.endDate._d : this.state.endDate,
-        num_guests:this.state.numGuests
-      };
+    // if(this.props.currentUser){
+      // this.state.guestId = this.props.currentUser.id;
+    // }
 
-      this.props.createBooking(fetchInfo).then(() => {
-        this.props.clearBookingErrors();
-      });
+    let fetchInfo = {
+      guest_id: this.props.currentUser.id,
+      castle_id: this.state.castleId,
+      check_in: this.state.startDate ? this.state.startDate._d : this.state.startDate,
+      check_out: this.state.endDate ? this.state.endDate._d : this.state.endDate,
+      num_guests:this.state.numGuests
+    };
 
-
+    this.props.createBooking(fetchInfo).then(() => {
+      this.props.clearBookingErrors();
+    });
   }
 
 

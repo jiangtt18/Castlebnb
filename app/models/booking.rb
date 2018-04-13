@@ -3,8 +3,9 @@ class Booking < ApplicationRecord
   presence: true
 
   validate :validate_num_guests
-  # validate :validate_date_type
+  validate :no_overlapping_booking_request
 
+  
   belongs_to :host,
   primary_key: :id,
   foreign_key: :host_id,
@@ -27,6 +28,29 @@ class Booking < ApplicationRecord
     end
   end
 
+
+  def no_overlapping_booking_request
+    if overlap?
+      errors[:base] << "Castle is not available at this time!"
+    end
+  end
+
+  # private
+
+  def overlap?
+    overlapping_requests.empty?  ? false : true
+  end
+
+  def overlapping_requests
+    Booking
+      .where.not(id: id)
+      .where.not(
+        'check_in > :check_out OR
+        check_out < :check_in',
+        check_out: self.check_out,
+        check_in: self.check_in
+      )
+  end
   # def validate_date_type
   #   if !check_in || !check_out
   #     errors[:date] << ": please select dates"

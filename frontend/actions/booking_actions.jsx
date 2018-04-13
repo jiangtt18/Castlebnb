@@ -1,4 +1,5 @@
 import * as BookingAPI from '../utils/booking_util';
+import { openDropdown, closeDropdown } from './drop_down_action';
 
 export const RECEIVE_BOOKING = "RECEIVE_BOOKING";
 export const RECEIVE_BOOKINGS = "RECEIVE_BOOKINGS";
@@ -46,8 +47,11 @@ export const fetchBookings = (guestId) => dispatch => (
 
 export const createBooking = booking => dispatch => (
   BookingAPI.createBooking(booking)
-    .then(
-      (resbooking) =>  dispatch(receiveBooking(resbooking)),
+    .then((resbooking) =>  {
+      dispatch(openDropdown());
+      dispatch(receiveBooking(resbooking));
+      setTimeout(() => dispatch(closeDropdown()), 2500);
+    },
       (errors) => dispatch(receiveBookingErrors(errors.responseJSON))
     )
 );

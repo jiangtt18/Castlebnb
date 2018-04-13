@@ -76,12 +76,18 @@ class CastleShow extends React.Component{
     const { city, title, price, host_id, imageUrl,host,
     bed_room,bath_room,max_guests,bath,discription, num_guests} = this.props.castle;
 
+    const style = {
+      backgroundImage: 'url(' + imageUrl + ')',
+    };
+
     return(
 
       <div className='castle-show'>
-        <img
-           src={imageUrl} alt='awesome castle pic'
-        />
+        <div style={style} className='castle-image'>
+          {/*<img
+            src={imageUrl} alt='awesome castle pic'
+            />*/}
+        </div>
         <div className='content'>
           <div className='CastleAndReview'>
             <div className='castleInfo'>
@@ -117,6 +123,7 @@ class CastleShow extends React.Component{
 
           <div className='bookingBar'>
             <BookingForm
+                  openModal={this.props.openModal}
                   castle={this.props.castle}
                   clearBookingErrors={this.props.clearBookingErrors}
                   currentUser={this.props.currentUser}

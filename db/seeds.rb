@@ -54,7 +54,7 @@ end
    is_gardenView:[true, false].sample,
    lng:35.6895,
    lat:139.6917,
-   image_url:'http://res.cloudinary.com/doohtqbau/image/upload/v1523348509/castles/ef2d4e68711c97bc5feb2aa86dddcc87.jpg'
+   image_url:'http://res.cloudinary.com/doohtqbau/image/upload/v1523652047/administration-ancient-architecture-358484_z5bzls.jpg'
  )
 
  Castle.create(
@@ -80,7 +80,7 @@ end
    is_gardenView:[true, false].sample,
    lng:31.2674,
    lat:121.5221,
-   image_url:'http://res.cloudinary.com/doohtqbau/image/upload/v1523348508/castles/c2b778dcc0d515fad22fbb4a879f0d4a.jpg'
+   image_url:'http://res.cloudinary.com/doohtqbau/image/upload/v1523652052/ancient-architecture-boats-570020_uenhgw.jpg'
  )
 
  Castle.create(
@@ -106,7 +106,7 @@ end
    is_gardenView:[true, false].sample,
    lng:37.7767,
    lat:122.4193,
-   image_url:'http://res.cloudinary.com/doohtqbau/image/upload/v1523348508/castles/f1b330adeb81e4f14218d3ab75ad720b.jpg'
+   image_url:'http://res.cloudinary.com/doohtqbau/image/upload/v1523652611/ancient-architecture-attractions-290098_yhu8kp.jpg'
  )
 
  Castle.create(
@@ -132,7 +132,7 @@ end
    is_gardenView:[true, false].sample,
    lng: -36.848461,
    lat:174.763336,
-   image_url:'http://res.cloudinary.com/doohtqbau/image/upload/v1523348508/castles/958889612329eaf5daf09a369e39e80e.jpg'
+   image_url:'http://res.cloudinary.com/doohtqbau/image/upload/v1523652892/architecture-bratislava-bratislava-castle-280173_uvnte3.jpg'
  )
 
  Castle.create(
@@ -158,7 +158,7 @@ end
    is_gardenView:[true, false].sample,
    lng:40.7128,
    lat:-74.0059,
-   image_url:'http://res.cloudinary.com/doohtqbau/image/upload/v1523348508/castles/47385deb05e1c927bf30d1ca83d71f68.jpg'
+   image_url:'http://res.cloudinary.com/doohtqbau/image/upload/v1523652611/administration-architecture-building-157330_oshce1.jpg'
  )
 
  Castle.create(
@@ -184,7 +184,7 @@ end
    is_gardenView:[true, false].sample,
    lng:51.5074,
    lat:-0.1278,
-   image_url:'http://res.cloudinary.com/doohtqbau/image/upload/v1523348508/castles/92a49b3787ad8911749c0f6a3a18877d.jpg'
+   image_url:'http://res.cloudinary.com/doohtqbau/image/upload/v1523652611/ancient-architecture-attractions-290098_yhu8kp.jpg'
   )
    Castle.create(
    host_id: 7,
