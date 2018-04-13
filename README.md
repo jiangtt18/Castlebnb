@@ -7,7 +7,8 @@ Castlebnb is a full-stack, single-page application inspired by Airbnb used for b
 A guest login feature is available to check out the website without going through the signup process.
 
 **Features**
-![Rendering castles](app/assets/images/screenshots/homepage.png)
+
+![index](app/assets/images/screenshot/homepage.png)
 
 Users begin at the home page where they can view homes whether they are logged in or not.  Buttons in the top right corner open modals that allow the user to login or signup.  A guest login option is available for demonstration.  Users can explore homes by scrolling through them on the homepages, typing a location to search in the search bar or clicking on the buttons that link to pre-selected locations.  At any time, the user can click the logo in the top left corner to navigate to the homepage.
 
@@ -17,7 +18,7 @@ Users begin at the home page where they can view homes whether they are logged i
 Castles have methods that allow them to carry reviews metadata: the average review rating and the number of reviews. When a user enters the show page and the app makes a request to the database, the database returns both the castle and the castle's reviews in one castle object. This enables the app to avoid querying multiple times.
 
 
-![booking castles](app/assets/images/screenshots/booking.png)
+![booking castles](app/assets/images/screenshot/booking.png)
 
 The booking form itself was modeled after AirBNB's booking form. Since the user data is stored globally, users can leave this section and come back without losing their data. The form validates users' credential and will redirect user to log-in page if user was not logged in. It also validates overlapping dates and max guest numbers. Error messages will be rendered if validation fails. Upon success submission, a drop-down list will pop up automatically under navigation bar containing all booking records.
 
