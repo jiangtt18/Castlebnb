@@ -17,7 +17,7 @@ const App = () => (
 
     <Switch>
       // <Route exact path="/search/:search_query" component={SearchContainer} />
-      <Route path="/search/" component={SearchContainer} />
+      <Route path="/search" component={SearchContainer} />
       <Route path="/castles/:castleId" component={CastleShowContainer} />
       <Route exact path="/" component={CastleIndexContainer} />
     </Switch>

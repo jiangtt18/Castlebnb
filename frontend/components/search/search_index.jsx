@@ -9,19 +9,18 @@ class SearchIndex extends React.Component {
   renderSpots() {
 
     const castles = Object.values(this.props.castles);
-
     return castles.map((castle)=> {
-      return <div >
+      return <ul className="spot" >
         <CastleIndexItem castle={castle} />
-      </div>;
+      </ul>;
     });
   }
   render(){
     return(
-        <div >
-
+        <div className='search-index' >
+          <div className='spots'>
             {this.renderSpots()}
-
+          </div>
       </div>
     );
   }

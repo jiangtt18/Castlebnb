@@ -7,15 +7,21 @@ import { withRouter } from 'react-router-dom';
 class Search extends React.Component {
   render() {
     return(
-      <div>
+      <div className='serach'>
+        <div className="spot-map">
         <CastleMap
         castles={this.props.castles}
         updateFilter = {this.props.updateFilter}/>
+      </div>
+
+      <div className="search-index">
       <SearchIndex
         castles={this.props.castles}
-        searchCastles = {this.props.searchCastles} />
+        />
+      </div>
       </div>
     );
+
   }
 }
 

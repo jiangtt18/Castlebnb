@@ -40,12 +40,13 @@ class SearchBar extends React.Component {
   render() {
 
     return (
-      <form className = 'top-bar' onSubmit={this.handleSubmit}>
+      <form className = 'search_bar' onSubmit={this.handleSubmit}>
         <input
           value={this.state.city}
           placeholder="Try Tokyo..."
           onChange ={this.update('city')}
         />
+      <input type="submit" value=""/>
       </form>
     );
 }

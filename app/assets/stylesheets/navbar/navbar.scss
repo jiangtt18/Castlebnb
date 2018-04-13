@@ -41,7 +41,8 @@ nav img {
   display:flex;
   justify-content: center;
 }
-#search_bar{
+
+.search_bar{
   border:1px solid #eee;
   border-width: 1px ;
   border-style: solid;
@@ -82,6 +83,9 @@ nav button{
   padding:0px;
   padding-top: 36px;
 }
+
+
+
 
 nav li:hover{
   border-bottom: 1px solid #008489

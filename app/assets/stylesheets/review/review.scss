@@ -1,0 +1,138 @@
+.review h3 {
+  font-weight: 700 ;
+  margin: 0px ;
+  word-wrap: break-word ;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+  font-size: 28px ;
+  line-height: 32px ;
+  letter-spacing: -0.6px ;
+  padding-top: 2px ;
+  padding-bottom: 2px ;
+  color: #484848 ;
+  border-bottom: 1px solid  #DBDBDB;
+  width: 100%;
+  margin-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 8px;
+}
+
+.review ul {
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.review li {
+  width: 40%;
+  margin-bottom: 8px;
+  margin-top:8px;
+
+}
+
+.review p {
+// font-weight: normal !important;
+color: #484848 !important;
+font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+margin: 0px !important;
+word-wrap: break-word !important;
+font-size: 17px !important;
+line-height: 22px !important;
+letter-spacing: 0.2px !important;
+}
+
+.reviewItems {
+// font-weight:0px !important;
+display:block !important;
+-webkit-font-smoothing: antialiased !important;
+width: 100%;
+// margin-bottom: 8px;
+}
+
+.reviewComment {
+  border-bottom: 1px solid  #DBDBDB !important;
+}
+
+#reviewer {
+  font-weight: normal !important;
+  margin-top: 24px !important;
+}
+
+#date{
+  font-size: 15px !important;
+  margin-bottom:24px !important;
+}
+
+#comment{
+  margin-bottom:24px!important;
+}
+
+.reviewButton{
+  background: #FF5A5F;
+  position: relative !important;
+  display: inline-block !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  border-radius: 4px !important;
+  width: 150px !important;
+  font-size: 19px !important;
+  line-height: 22px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  height:40px;
+  border-color:#FF5A5F;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.reviewForm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+  width: 450px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: 400;
+  color: #484848;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.reviewForm h1 {
+  margin-bottom: 12px;
+}
+
+.reviewForm textarea {
+  height: 45px;
+  line-height: 24px;
+  border: 1px solid #00A699;
+  margin-bottom: 25px;
+  font-size: 19px;
+  color: #484848 ;
+  font-weight: 300 ;
+  padding: 11px ;
+  width: 100%;
+}
+
+.reviewForm select {
+// bckground: #FF5A5F;
+margin-left: 15px;
+margin-right: 15px;
+position: relative !important;
+display: inline-block !important;
+text-align: center !important;
+text-decoration: none !important;
+border-radius: 4px !important;
+width: 40% !important;
+font-size: 19px !important;
+line-height: 22px !important;
+padding-top: 0px !important;
+padding-bottom: 0px !important;
+color: #484848 !important;
+font-weight: 300;
+height:30px;
+border-color:#484848;
+margin-top: 12px;
+margin-bottom: 12px;
+}

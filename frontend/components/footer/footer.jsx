@@ -4,13 +4,16 @@ import { Link } from 'react-router';
 const Footer = (props) => {
 
   return (
-    <div className="footer">
-      <span className="footer-text-container">
-        <a className="footer-text" href="https://www.linkedin.com/feed/">Company</a>
-        <a className="footer-text" href="https://github.com/jiangtt18/Castlebnb">About</a>
-        <a className="footer-text" href="https://castlebnb.herokuapp.com/#/">Hosting</a>
-      </span>
-    </div>
+    <footer className="footer">
+      <small className="footer-copy">
+        &copy; 2018 TingTing. All rights reserved.
+      </small>
+      <ul className='footer-links'>
+        <li><a className="footer-text" href="https://www.linkedin.com/feed/">Company</a></li>
+        <li><a className="footer-text" href="https://github.com/jiangtt18/Castlebnb">About</a></li>
+        <li><a className="footer-text" href="https://castlebnb.herokuapp.com/#/">Hosting</a></li>
+      </ul>
+    </footer>
   );
 };
 

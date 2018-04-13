@@ -34,6 +34,7 @@
   display:flex;
   width: 250px;
   height: 300px;
+  margin-top:5px
 }
 
 .castle-index-item {
@@ -43,6 +44,10 @@
   color: #484848;
   padding-top: 0px ;
   padding-bottom: 40px ;
+  // margin-top:5px
+}
+.castle-index-item p {
+  margin-bottom:2px;
 }
 
 .index-city {

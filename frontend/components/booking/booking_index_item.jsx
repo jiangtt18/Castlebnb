@@ -14,12 +14,14 @@ class BookingIndexItem extends React.Component {
 
   render() {
     return(
+      <li className='drop_down_list'>
       <div>
-        <h6>{this.props.mytrip.castle.title}</h6>
-      <p>{this.props.mytrip.check_in}</p>
-      <p>{this.props.mytrip.check_out}</p>
-      <button onClick={this.handleDelete}>delete</button>
+      <span>{this.props.mytrip.castle.title} </span>
+      <span>{this.props.mytrip.check_in} </span>
+      <span>{this.props.mytrip.check_out} </span>
       </div>
+      <span><button onClick={this.handleDelete}>delete</button></span>
+      </li>
     );
   }
 

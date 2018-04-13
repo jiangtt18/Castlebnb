@@ -12,12 +12,13 @@ class ReviewIndexItem extends React.Component {
     const date = new Date(created_at);
     const dates = date.toDateString().split(' ');
 
-
     return (
-      <div>
-        <p>{reviewerName}</p>
-        <p> {dates[1]} {dates[3]} </p>
-        <p>{comment}</p>
+      <div className='reviewComment'>
+      <li >
+        <p id='reviewer'>{reviewerName}</p>
+        <p  id='date'> {dates[1]} {dates[3]} </p>
+        <p id = 'comment'>{comment}</p>
+      </li>
       </div>
     );
   }

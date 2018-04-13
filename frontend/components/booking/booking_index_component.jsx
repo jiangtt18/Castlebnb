@@ -30,18 +30,18 @@ render() {
   if (this.props.show) {
     if (Object.keys(this.props.trips).length === 0 ) {
       return(
-      <div >
-        You have no upcoming trips.
-        {/*}<Link to="/search">Click here</Link> to search available homes and request to book!*/}
-      </div>
+      <ul className='header-notifications'>
+        <li className='drop_down_list'>You have no upcoming trips.
+        <Link to="/search">Click here</Link> to book!</li>
+      </ul>
     );
 
     } else  {
       return(
         <div>
-          <div >
+          <ul className='header-notifications'>
             {this.renderTrips()}
-          </div>
+          </ul>
         </div>
       );
     }

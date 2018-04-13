@@ -4,6 +4,7 @@ import ReviewIndexItem from './review_index_items.jsx';
 
 class ReviewIndex extends React.Component {
   constructor(props){
+
     super(props);
     this.state = {showCreate: false,
                   comment: '',
@@ -41,8 +42,7 @@ class ReviewIndex extends React.Component {
       return <div></div>;
     }
     return (
-      <div>
-        <span>Add a review</span>
+      <div className='reviewForm'>
         <div>
           <h1>Describe Your Experience</h1>
           <textarea
@@ -100,7 +100,7 @@ class ReviewIndex extends React.Component {
           </select>
           </div>
 
-          <button onClick={this.handleSubmit} >Submit</button>
+          <button className='reviewButton' onClick={this.handleSubmit} >Submit</button>
         </div>
       </div>
     );
@@ -163,7 +163,7 @@ class ReviewIndex extends React.Component {
     let reviewDetails = Object.values(reviews);
 
     return (
-      <div>
+      <div className='review'>
         <h3>{reviewDetails.length} Reviews {rating}</h3>
         <ul>
           <li>Accuracy {Math.round(accuracy_avg)} </li>
@@ -173,7 +173,7 @@ class ReviewIndex extends React.Component {
           <li>Cleanliness { Math.round(cleanliness_avg)}</li>
           <li>Value {Math.round(value_avg)} </li>
         </ul>
-        <ul>
+        <ul className='reviewItems'>
           {
           reviewDetails.map(review => (
               <ReviewIndexItem
@@ -183,7 +183,7 @@ class ReviewIndex extends React.Component {
           ))
           }
         </ul>
-        <button onClick={this.handleAddReview}>
+        <button className='reviewButton' onClick={this.handleAddReview}>
           Write a review
         </button>
 

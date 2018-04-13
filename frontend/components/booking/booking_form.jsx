@@ -59,7 +59,7 @@ class BookingForm extends React.Component {
     return(
       <ul className="error-ul">
         {this.props.errors.map((error, idx) => (
-          <li key={`error-${idx}`}>
+          <li className='errors' key={`error-${idx}`}>
             {error}
           </li>
         ))}
@@ -75,13 +75,13 @@ class BookingForm extends React.Component {
     return (
       <div >
 
-            <div>
-              <h1 >${this.props.castle.price}</h1>
-              <p>per night</p>
+            <div className='price'>
+              <span className='book-price'>${this.props.castle.price} </span>
+              <span> per night</span>
             </div>
             <div>
-              {this.props.castle.average_rating}
-              {this.props.castle.num_guests}
+              <span>Rating:</span>
+              <span>{this.props.castle.rating}</span>
             </div>
 
             <div className="form-container">
@@ -101,7 +101,7 @@ class BookingForm extends React.Component {
                 />
 
               <div>
-                <p>Guests</p>
+                <p className='guest'>Guests</p>
                   <input
                     className="guest-input"
                     type="number"

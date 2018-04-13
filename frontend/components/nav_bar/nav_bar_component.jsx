@@ -38,7 +38,8 @@ class NavBar extends React.Component{
           <a href='#'><img src={staticAssets.logo} alt='logo'/>
           </a>
           <SearchBar
-            searchCastles={this.props.searchCastles} />
+
+            searchCastles={this.props.searchCastles}/>
         </div>
         <ul >
           <li><button
@@ -74,12 +75,13 @@ class NavBar extends React.Component{
           </form>*/}
 
           <SearchBar
+
             searchCastles={this.props.searchCastles}/>
 
         </div>
         <ul className='right_nav'>
           <li  id= 'welcome'>Hi, {currentUser.firstname}!</li>
-          <li onClick= {toggleDropDown}> Trips
+          <li id= 'trip' onClick= {toggleDropDown}> Trips
             <GuestBooking
               show = {showBooking}
               trips = {trips}

@@ -1,20 +1,26 @@
+
+
 .castle-show img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  height: 600px;
+  height: 368px !important;
 }
 
-.CastleAndBooking {
-  max-width: 1080px ;
-  padding-right: 24px ;
-  padding-left: 24px ;
-  max-width: 696px ;
-  margin-left: 116px ;
-  margin-right: 116px;
-  margin-top: 20px;
-  min-height: 600px;
+.content {
+ position: relative;
+ // flex-wrap: wrap;
+ max-width: 1080px ;
+ padding-right: 24px ;
+ padding-left: 24px ;
+ max-width: 896px ;
+ margin-left: 116px ;
+ margin-right: 116px;
+ margin-top: 20px;
+ min-height: 600px;
+
 }
+
 .castleInfo p {
   margin-bottom: 25px;
 }
@@ -60,19 +66,21 @@
   width: 40%;
   margin-bottom: 25px;
 }
-.castleInfo {
+.CastleAndReview {
   color: #484848 ;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
   font-size: 17px ;
   font-weight: 300 ;
   letter-spacing: 0.2px ;
-  width: 90% ;
-  float: left ;
+  width: 58.333333333333336% !important;
+  float: left !important;
+  // float: left ;
   padding-left: 8px ;
   padding-right: 8px ;
   min-height: 1px ;
   position: relative ;
   -webkit-font-smoothing: antialiased;
+  // display:flex;
 }
 
 .castle-show h3 {

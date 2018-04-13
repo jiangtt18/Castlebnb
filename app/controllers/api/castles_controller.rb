@@ -5,10 +5,10 @@ class Api::CastlesController < ApplicationController
       # @castles = Castle.all.order(id: :asc).limit(18)
       # if params[:maxGuests]
       #   max_num = params[:maxGuests]
-      #   @castles = @castles.where('num_guests >= ?', max_num)
-      if params[:search]
-        @castles = Castle.search(search_params[:search_words])
-      end
+      #   @castles = @castles.where('num_guests >= ?', max_num
+    if params[:search]
+      @castles = Castle.search(search_params[:search_words])
+    end
 
   end
 
