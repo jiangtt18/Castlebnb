@@ -4,7 +4,9 @@ class Castle < ApplicationRecord
   :country, presence:true
 
   validates :street_address, uniqueness: true
-
+  # geocoded_by :address   # can also be an IP address
+  # after_validation :geocode          # auto-fetch coordinates
+  # attr_reader :address
   # has_many :images,
   #   primary_key: :id,
   #   foreign_key: :castle_id,
@@ -73,6 +75,10 @@ class Castle < ApplicationRecord
         .where("lng < ?", bounds[:northEast][:lng])
   end
 
+
+  # def address()
+  #   [street_address, city, state, country].compat.join(", ")
+  # end
 #google map bounds will be in the following format:
  # {
  #   "northEast"=> {"lat"=>"37.80971", "lng"=>"-122.39208"},

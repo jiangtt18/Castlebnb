@@ -1,19 +1,20 @@
 .bookingBar{
-  position: fixed;
-  bottom: 200px;
-  right:116px;
-  margin-left: 45px !important;
-  width: 376px !important;
-  z-index: 3 !important;
-  color: #484848 !important;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-  font-size: 17px !important;
-  font-weight: 300 !important;
-  letter-spacing: 0.2px !important;
-  line-height: 22px !important;
-  float:left;
+
+  margin-top: 18px;
+  // margin-left: 300px ;
+  width: 376px ;
+  z-index: 3 ;
+  color: #484848 ;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
+  font-size: 17px ;
+  font-weight: 300 ;
+  letter-spacing: 0.2px ;
+  line-height: 22px ;
+  height:360px;
   border:1px solid #dce0e0;
   padding:20px;
+  background-color: white;
+  // right: -800px;
 
 
   // float: left ;

@@ -13,6 +13,8 @@
 .drop_down_list:hover #trip {
   background: #f00;
   border-bottom: none;
+  text-overflow:ellipsis;
+  overflow: hidden;
 }
 
 .drop_down_list button {
@@ -23,7 +25,7 @@
 .header-notifications {
   position: absolute;
   display:flex;
-  flex-wrap:wrap-reverse;
+  flex-wrap:wrap;
   flex-direction: row;
 
   // ustify-content: space-between;
@@ -40,6 +42,7 @@
   top: 80px;
   width: 300px;
   min-height: 50px;
+  height:auto;
 }
 
 .drop_down_list:hover .header-notifications {
@@ -49,8 +52,26 @@
 .header-notifications > li {
   border-top: 1px solid #ccc;
   color: #000;
+
+
 }
 
-.header-notifications > li:hover {
+.header-notifications  li:hover {
   background: #eee;
+  border-color: none;
+  width: 79%;
 }
+
+// .booking_here {
+//     display:block;
+// }
+
+.noTrip{
+  width: 100%;
+  display: block;
+  padding-right: 40px;
+}
+// .noTrip div {
+//   width: 100%
+//
+// }

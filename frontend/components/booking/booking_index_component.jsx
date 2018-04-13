@@ -31,8 +31,12 @@ render() {
     if (Object.keys(this.props.trips).length === 0 ) {
       return(
       <ul className='header-notifications'>
-        <li className='drop_down_list'>You have no upcoming trips.
-        <Link to="/search">Click here</Link> to book!</li>
+        <li className='drop_down_list noTrip'>
+          <div>You have no upcoming trips.</div>
+          <div className='booking_here'>
+            <Link to="/search">Click here </Link> to book!
+          </div>
+        </li>
       </ul>
     );
 

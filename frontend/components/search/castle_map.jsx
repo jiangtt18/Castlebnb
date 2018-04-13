@@ -21,6 +21,7 @@ class Map extends React.Component {
     // const geocoder = new google.maps.Geocoder();
     // const geocodeCallback =
     // const that = this;
+
     const defaultOptions = {
       zoom: 13,
       center: { lng: 35.6895, lat: 139.6917 },
@@ -48,7 +49,7 @@ class Map extends React.Component {
     // geocoder.geocode({ address }, geocodeCallback);
 
     // let mapOptions;
-    // if(this.props.castle.lat !== "" && this.props.lat !== undefined) {
+    // if(this.props.castle. lat !== "" && this.props.lat !== undefined) {
     //   mapOptions = {
     //     center: {lat: parseFloat(this.props.castle.lat), lng: parseFloat(this.props.castle.lng)},
     //     zoom: 0

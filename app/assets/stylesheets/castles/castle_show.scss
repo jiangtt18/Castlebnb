@@ -8,12 +8,12 @@
 }
 
 .content {
- position: relative;
+
+ display:flex;
  // flex-wrap: wrap;
  max-width: 1080px ;
  padding-right: 24px ;
  padding-left: 24px ;
- max-width: 896px ;
  margin-left: 116px ;
  margin-right: 116px;
  margin-top: 20px;
@@ -67,13 +67,14 @@
   margin-bottom: 25px;
 }
 .CastleAndReview {
+  margin-right: 60px;
   color: #484848 ;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif ;
   font-size: 17px ;
   font-weight: 300 ;
   letter-spacing: 0.2px ;
   width: 58.333333333333336% !important;
-  float: left !important;
+
   // float: left ;
   padding-left: 8px ;
   padding-right: 8px ;
