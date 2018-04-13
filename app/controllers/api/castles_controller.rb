@@ -1,7 +1,7 @@
 class Api::CastlesController < ApplicationController
 
   def index
-    @castles = bounds ? Castle.in_bounds(bounds) : Castle.all.order(id: :asc).limit(18)
+    @castles = bounds ? Castle.in_bounds(bounds) : Castle.all.order(id: :asc).limit(12)
       # @castles = Castle.all.order(id: :asc).limit(18)
       # if params[:maxGuests]
       #   max_num = params[:maxGuests]
