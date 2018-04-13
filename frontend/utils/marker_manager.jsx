@@ -25,8 +25,7 @@ export default class MarkerManager {
   }
 
   createMarkerFromCastle(castle) {
-    // const position = new google.maps.LatLng(castle.lat, castle.lng);
-    // console.log(castle.lat, castle.lng);
+
     const position = { lng: 35.6895, lat: 139.6917 };
 
     const marker = new google.maps.Marker({
@@ -35,9 +34,7 @@ export default class MarkerManager {
       id: castle.id
     });
 
-    // marker.setMap(this.map);
-
-    debugger
+  
     marker.addListener('click', () => this.handleClick(castle));
     this.markers[marker.id] = marker;
   }

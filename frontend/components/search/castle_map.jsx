@@ -11,7 +11,7 @@ const _getCoordsObj = latLng => ({
 
 class Map extends React.Component {
   constructor(props) {
-    debugger;
+
     super(props);
   }
 
@@ -21,7 +21,7 @@ class Map extends React.Component {
       zoom:2
     };
 
-    debugger;
+    
 
     if(this.props.location){
       const center = queryString.parse(this.props.location.search);

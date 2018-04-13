@@ -6,7 +6,6 @@ import { Link} from 'react-router-dom';
 class GuestBooking extends React.Component{
 
   componentDidMount() {
-    // debugger;{/* did not hit this line */}
    this.props.fetchMyTrips(this.props.currentUser.id);
 
   }
