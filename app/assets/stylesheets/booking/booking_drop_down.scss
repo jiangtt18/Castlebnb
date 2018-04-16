@@ -8,6 +8,7 @@
 
 .drop_down_list {
   display:flex;
+  padding-right: 25px;
   // justify-content: space-between;
 }
 .drop_down_list:hover #trip {
@@ -40,9 +41,10 @@
   border-bottom-right-radius: 5px;
   // overflow: hidden;
   top: 80px;
-  width: 300px;
+  width: 310px;
   min-height: 50px;
   height:auto;
+  margin-right: 0px;
 }
 
 .drop_down_list:hover .header-notifications {
@@ -55,12 +57,12 @@
 
 
 }
-
-.header-notifications  li:hover {
-  background: #eee;
-  border-color: none;
-  width: 79%;
-}
+//
+// .header-notifications  li:hover {
+//   background: #eee;
+//   border-color: none;
+//   // width: 100%;
+// }
 
 // .booking_here {
 //     display:block;
@@ -75,3 +77,14 @@
 //   width: 100%
 //
 // }
+
+
+.drop-down-tab{
+  width:100%;
+}
+
+.drop_down_list:hover {
+  background: #eee;
+  border-color: none;
+  // width: 100%;
+}

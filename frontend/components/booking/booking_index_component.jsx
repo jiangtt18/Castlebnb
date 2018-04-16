@@ -14,7 +14,7 @@ class GuestBooking extends React.Component{
   const mytrips = Object.values(this.props.trips);
   return mytrips.map((mytrip, idx)=> {
 
-    return (<div key={`${idx}`}>
+    return (<div className='drop-down-tab' key={`${idx}`}>
       <BookingIndexItem mytrip={mytrip} deleteTrip={this.props.deleteTrip} />
     </div>);
 

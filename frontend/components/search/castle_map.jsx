@@ -11,7 +11,6 @@ const _getCoordsObj = latLng => ({
 
 class Map extends React.Component {
   constructor(props) {
-
     super(props);
   }
 
@@ -21,7 +20,7 @@ class Map extends React.Component {
       zoom:2
     };
 
-    
+
 
     if(this.props.location){
       const center = queryString.parse(this.props.location.search);
@@ -42,18 +41,32 @@ class Map extends React.Component {
 
   }
 
-  componentDidUpdate() {
-     this.MarkerManager.updateMarkers(this.props.castles);
+  componentWillReceiveProps(newProps) {
+    if (newProps.location.search !== this.props.location.search) {
+      const old = this.map.getCenter();
+      const oldCenter = {center: {lat:`${old.lat()}`, lng:`${old.lng()}` }}
+      const center = queryString.parse(newProps.location.search);
+      const newCenter = {center: center}
+      const lat = parseFloat(center.lat);
+      const lng = parseFloat(center.lng);
+      const parsedCenter = {lat: lat, lng:lng};
+
+
+
+      if ((Object.keys(center).length!== 0) && (newCenter.center.lat !== oldCenter.center.lat)){
+
+        this.map.setCenter(parsedCenter);
+        this.map.setZoom(12);
+      }
+      }
+      this.MarkerManager.updateMarkers(this.props.castles);
+
   }
 
-  // componentWillReceiveProps(newProps) {
-  //   if (this.props.lat !== newProps.lat && this.props.lng !== newProps.lng){
-  //     this.map.setOptions({
-  //       center: {lat: parseFloat(newProps.lat), lng: parseFloat(newProps.lng)},
-  //       zoom: 13
-  //     });
-  //   }
-  // }
+
+  componentDidUpdate(){
+    this.MarkerManager.updateMarkers(this.props.castles);
+  }
 
   _registerListeners() {
     google.maps.event.addListener(this.map, 'idle', () => {
