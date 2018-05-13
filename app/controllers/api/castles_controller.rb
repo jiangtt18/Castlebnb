@@ -6,7 +6,7 @@ class Api::CastlesController < ApplicationController
       # if params[:maxGuests]
       #   max_num = params[:maxGuests]
       #   @castles = @castles.where('num_guests >= ?', max_num
-    if params[:search]
+    if params[:search] # from app component wild card
       @castles = Castle.search(search_params[:search_words])
     end
 
@@ -51,7 +51,7 @@ class Api::CastlesController < ApplicationController
   end
 
   def bounds
-   params[:bounds]
+   params[:bounds] #from google API call
   end
 
 end

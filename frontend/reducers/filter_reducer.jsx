@@ -2,7 +2,7 @@ import {UPDATE_FILTER} from '../actions/filter_actions';
 import { merge } from 'lodash';
 
 const defaultFilters = Object.freeze({
-  bounds: {},
+  bounds: {northEast: {}, southWest: {}},
   maxGuests:1
 });
 

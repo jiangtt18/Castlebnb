@@ -7,47 +7,43 @@ class SearchBar extends React.Component {
 
     super(props);
     this.state = {
-      city:''
+      city:'',
+
     };
     this.handleDestination = this.handleDestination.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e){
-    e.preventDefault();
-    this.props.searchCastles(this.state.city)
-    .then(this.props.history.push('/search'));
-
-  }
-
-  update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
 
 
   handleDestination(value) {
-    console.log(value);
-    const lat = value.location.lat;
-    const lng = value.location.lng;
 
-    if (value && value.location) {
-      this.props.history.push(`/search/?lat=${lat}&lng=${lng}`);
-    }
+      if (value && value.location) {
+        const lat = value.location.lat;
+        const lng = value.location.lng;
+        this.props.history.push({
+          pathname:"/search",
+          query: {
+          lat: value.location.lat,
+          lng: value.location.lng
+        }
+        });
+      }
+
  }
+
+
 
   render() {
 
     return (
-      <form className = 'search_bar' onSubmit={this.handleSubmit}>
-        <input
-          value={this.state.city}
-          placeholder="Try Tokyo..."
-          onChange ={this.update('city')}
-        />
-      <input type="submit" value=""/>
-      </form>
+      <div className = 'search_bar'>
+      <Geosuggest
+          className="search-input"
+          placeholder="Where to?"
+          id="top-bar"
+          onSuggestSelect={this.handleDestination}
+      />
+      </div>
     );
 }
 }

@@ -1,8 +1,6 @@
-
 import React from 'react';
-import { Link , withRouter} from 'react-router';
+import { Link } from 'react-router';
 import MarkerManager from '../../utils/marker_manager';
-import queryString from 'query-string';
 
 const _getCoordsObj = latLng => ({
   lat: latLng.lat(),
@@ -14,58 +12,38 @@ class Map extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    let mapOptions = {
-      center: { lat: 25, lng:-43 },
-      zoom:2
-    };
-
-
-
-    if(this.props.location){
-      const center = queryString.parse(this.props.location.search);
-      const lat = parseFloat(center.lat);
-      const lng = parseFloat(center.lng);
-      const parsedCenter = {lat: lat, lng:lng};
-        mapOptions = {
-          center: parsedCenter,
-          zoom:12
-        };
+  componentDidMount () {
+    const mapDOMNode = this.refs.map;
+    let mapOptions;
+    if(this.props.lat !== "" && this.props.lat !== undefined) {
+      mapOptions = {
+        center: {lat: parseFloat(this.props.lat), lng: parseFloat(this.props.lng)},
+        zoom: 13
+      };
     }
-
-    const map = this.refs.map;
-    this.map = new google.maps.Map(map, mapOptions);
-    this.MarkerManager = new MarkerManager(this.map, this._handleMarkerClick.bind(this));
+    else {
+      mapOptions = {
+        center: {lat: 0, lng: 0},
+        zoom: 2
+      };
+    }
+    this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this._registerListeners();
+    this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.updateMarkers(this.props.castles);
+  }
 
+  componentDidUpdate() {
+    this.MarkerManager.updateMarkers(this.props.castles);
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.location.search !== this.props.location.search) {
-      const old = this.map.getCenter();
-      const oldCenter = {center: {lat:`${old.lat()}`, lng:`${old.lng()}` }}
-      const center = queryString.parse(newProps.location.search);
-      const newCenter = {center: center}
-      const lat = parseFloat(center.lat);
-      const lng = parseFloat(center.lng);
-      const parsedCenter = {lat: lat, lng:lng};
-
-
-
-      if ((Object.keys(center).length!== 0) && (newCenter.center.lat !== oldCenter.center.lat)){
-
-        this.map.setCenter(parsedCenter);
-        this.map.setZoom(12);
-      }
-      }
-      this.MarkerManager.updateMarkers(this.props.castles);
-
-  }
-
-
-  componentDidUpdate(){
-    this.MarkerManager.updateMarkers(this.props.castles);
+    if (this.props.lat !== newProps.lat && this.props.lng !== newProps.lng){
+      this.map.setOptions({
+        center: {lat: parseFloat(newProps.lat), lng: parseFloat(newProps.lng)},
+        zoom: 13
+      });
+    }
   }
 
   _registerListeners() {
@@ -74,7 +52,7 @@ class Map extends React.Component {
       const bounds = {
         northEast: { lat:north, lng: east },
         southWest: { lat: south, lng: west } };
-      this.props.updateFilter('bounds', bounds);
+      this.props.updateFilter({bounds});
     });
   }
 
@@ -92,4 +70,4 @@ class Map extends React.Component {
   }
 }
 
-export default withRouter(Map)
+export default Map;

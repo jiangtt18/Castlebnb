@@ -6,10 +6,13 @@ import { withRouter } from 'react-router-dom';
 
 class Search extends React.Component {
   render() {
+  
     return(
       <div className='serach'>
         <div className="spot-map">
         <CastleMap
+        lat={this.props.location.query.lat}
+        lng={this.props.location.query.lng}
         castles={this.props.castles}
         updateFilter = {this.props.updateFilter}/>
       </div>
@@ -25,4 +28,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default withRouter(Search);
