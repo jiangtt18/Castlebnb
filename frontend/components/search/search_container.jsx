@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return({
     castles: state.entities.castles,
-
+    
   });
 };
 

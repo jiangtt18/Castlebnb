@@ -6,6 +6,7 @@ export default class MarkerManager {
   }
 
   updateMarkers(castles) {
+  
     const castleKeys = Object.keys(castles);
     const markerKeys = Object.keys(this.markers);
 
@@ -26,18 +27,17 @@ export default class MarkerManager {
 
   createMarkerFromCastle(castle) {
 
-    const position = { lng: 35.6895, lat: 139.6917 };
+    const position = { lng: castle.lng, lat: castle.lat };
 
     const marker = new google.maps.Marker({
       position,
       map: this.map,
       id: castle.id
     });
-
-  
     marker.addListener('click', () => this.handleClick(castle));
     this.markers[marker.id] = marker;
   }
+
 
   removeMarker(marker) {
     this.markers[marker.id].setMap(null);

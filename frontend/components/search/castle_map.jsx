@@ -30,14 +30,17 @@ class Map extends React.Component {
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this._registerListeners();
     this.MarkerManager = new MarkerManager(this.map);
+
     this.MarkerManager.updateMarkers(this.props.castles);
   }
 
   componentDidUpdate() {
+
     this.MarkerManager.updateMarkers(this.props.castles);
   }
 
   componentWillReceiveProps(newProps) {
+  
     if (this.props.lat !== newProps.lat && this.props.lng !== newProps.lng){
       this.map.setOptions({
         center: {lat: parseFloat(newProps.lat), lng: parseFloat(newProps.lng)},
@@ -57,6 +60,7 @@ class Map extends React.Component {
   }
 
   _handleMarkerClick(castle) {
+
     this.props.history.push(`castles/${castle.id}`);
   }
 

@@ -16,11 +16,11 @@ class SearchBar extends React.Component {
 
 
   handleDestination(value) {
-
+      debugger;
       if (value && value.location) {
         const lat = value.location.lat;
         const lng = value.location.lng;
-        this.props.history.push({
+        this.props.history.replace({
           pathname:"/search",
           query: {
           lat: value.location.lat,
@@ -34,7 +34,6 @@ class SearchBar extends React.Component {
 
 
   render() {
-
     return (
       <div className = 'search_bar'>
       <Geosuggest
