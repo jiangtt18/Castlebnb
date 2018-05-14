@@ -6,29 +6,43 @@
   width: 460px;
   text-align: left;
   margin-left: 16px;
+
+
 }
 .geosuggest__input {
-  width: 100%;
+  width: 460px;
   border: 2px solid transparent;
   box-shadow: 0 0 1px #3d464d;
   padding: .5em 1em;
   -webkit-transition: border 0.2s, box-shadow 0.2s;
           transition: border 0.2s, box-shadow 0.2s;
+
+
+  height: 40px;
+  padding: 0px;
+  padding-Left:20px;
+  padding-Top: 2px;
+  font-Size: 16px;
+
+
 }
 .geosuggest__input:focus {
   border-color: #267dc0;
-  box-shadow: 0 0 0 transparent;
+  box-shadow: 0 0 0 ;
+  -webkit-box-shadow: 0px 0px 0px;
+  border: 0px
 }
 .geosuggest__suggests {
   position: absolute;
-  width: 492px;
+  width: 480px;
   display: block;
   top: 100%;
   left: 0;
   right: 0;
   max-height: 40em;
+  height:auto;
   padding: 0;
-  margin-top: -1px;
+  margin-top: 1px;
   background: #fff;
   border: 2px solid #267dc0;
   border-top-width: 0;
@@ -39,6 +53,7 @@
 
   -webkit-transition: max-height 1s, border 0.2s;
           transition: max-height 1s, border 0.2s;
+
 
 }
 .geosuggest__suggests--hidden {
@@ -51,11 +66,11 @@
  * A geosuggest item
  */
 .geosuggest__item {
-  font-size: 18px;
+  font-size: 16px;
   font-size: 1rem;
   padding: .5em .65em;
   cursor: pointer;
-  
+
 }
 .geosuggest__item:hover,
 .geosuggest__item:focus {
@@ -74,18 +89,21 @@
 }
 
 
-#search_bar{
-  border:1px solid #eee;
-  border-width: 1px ;
-  border-style: solid;
-  border-radius: 2px;
-  box-shadow: 2px 2px 10px #eee;
-  margin-left: 16px;
-  padding:3px;
-  height: 42px;
-  vertical-align: middle;
-  // margin-top: 16px;
-  margin-bottom: 3px;
-  width:  460px;
-  font-size: 19px ;
-}
+
+
+
+// #search_bar{
+//   border:1px solid #eee;
+//   border-width: 1px ;
+//   border-style: solid;
+//   border-radius: 2px;
+//   box-shadow: 2px 2px 10px #eee;
+//   margin-left: 16px;
+//   padding:3px;
+//   height: 42px;
+//   vertical-align: middle;
+//   // margin-top: 16px;
+//   margin-bottom: 3px;
+//   width:  460px;
+//   font-size: 19px ;
+// }
