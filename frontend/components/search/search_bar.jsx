@@ -7,8 +7,7 @@ class SearchBar extends React.Component {
 
     super(props);
     this.state = {
-      city:'',
-
+      city:''
     };
     this.handleDestination = this.handleDestination.bind(this);
   }
@@ -16,21 +15,30 @@ class SearchBar extends React.Component {
 
 
   handleDestination(value) {
-
       if (value && value.location) {
         console.log(value);
         const lat = value.location.lat;
         const lng = value.location.lng;
+        this.props.searchCastles(this.state.city)
+        .then(
         this.props.history.replace({
           pathname:"/search",
           query: {
           lat: value.location.lat,
           lng: value.location.lng
         }
-        });
+        })
+      );
       }
 
+
  }
+
+ update(field) {
+   return e => this.setState({
+      [field]: e
+    });
+  }
 
 
 
@@ -41,6 +49,7 @@ class SearchBar extends React.Component {
           className="search-input"
           placeholder="Where to?"
           id="top-bar"
+          onChange ={this.update('city')}
           onSuggestSelect={this.handleDestination}
       />
       </div>

@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return({
     castles: state.entities.castles,
-    
+
   });
 };
 
@@ -20,6 +20,3 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
-
-
-// Guests: state.ui.filter.maxGuests,

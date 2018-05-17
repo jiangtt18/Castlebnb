@@ -38,7 +38,6 @@ class NavBar extends React.Component{
           <a href='#'><img src={staticAssets.logo} alt='logo'/>
           </a>
           <SearchBar
-
             searchCastles={this.props.searchCastles}/>
         </div>
         <ul >
