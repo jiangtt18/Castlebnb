@@ -84,6 +84,10 @@ def self.search(search_query)
   p "======================"
   search_query = "%#{search_query.downcase}%"
   self.where('lower(city) LIKE ?', search_query)
+  .or(self.where("lower(country) like ?", search_query))
+  .or(self.where("lower(title) like ?", search_query))
+  .or(self.where("lower(state) like ?", search_query))
+
 end
 
 
