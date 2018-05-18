@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
           <div className='title'>Let’s get you signed up</div>
           <div>
 
-          <div onClick={this.props.closeModal} className="close-x">X</div>
+          <div onClick={this.props.closeModal} className="close-x"><i className="fa fa-times"></i></div>
 
           {this.renderErrors()}
           <br/>

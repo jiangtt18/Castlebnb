@@ -49,7 +49,7 @@ class Login extends React.Component{
           <div className='title'> Log in to continue</div>
           <div >
             <br/>
-            <div onClick={this.props.closeModal} className="close-x">X</div>
+            <div onClick={this.props.closeModal} className="close-x"><i className="fa fa-times"></i></div>
 
             {this.renderErrors()}
             <br/>

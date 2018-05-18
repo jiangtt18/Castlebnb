@@ -48,11 +48,12 @@
 
 .close-x {
    position: absolute;
-   top: 5px;
+   top: 3px;
    left: 16px;
    cursor: pointer;
    font-size: 23px;
    color: rgb(118, 118, 118);
+   opacity: 0.5;
  }
 
  .error {
