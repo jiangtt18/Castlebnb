@@ -156,9 +156,9 @@ class ReviewIndex extends React.Component {
     );
   }
 
-  startSystem(rate){
+  startSystem(rate, size){
     return(
-    <div key={`${rate}2`} style={{fontSize:20}} className="average-rating-index">
+    <div key={`${rate}2`} style={{fontSize:size}} className="average-rating-index">
            <StarRatingComponent
              style={{padding:'20px'}}
              name="star"
@@ -181,14 +181,19 @@ class ReviewIndex extends React.Component {
 
     return (
       <div className='review'>
-        <h3>{reviewDetails.length} Reviews {rating}</h3>
+        <h3>
+          <div style={{display:'flex'}}>
+            <span>{reviewDetails.length} Reviews </span>
+            <span>{this.startSystem(rating,30)}</span>
+          </div>
+        </h3>
         <ul className ='ratings'>
-          <li><span>Accuracy </span> <span>{this.startSystem(Math.round(accuracy_avg))}</span></li>
-          <li><span>Location </span> <span>{this.startSystem(Math.round(location_avg))}</span></li>
-          <li><span>Communication </span>  <span>{this.startSystem(Math.round(communication_avg))}</span> </li>
-          <li><span>Check In </span>  <span>{this.startSystem(Math.round(checkin_avg))}</span>  </li>
-          <li><span>Cleanliness </span>  <span>{this.startSystem(Math.round(cleanliness_avg))}</span> </li>
-          <li><span>Value </span>  <span>{this.startSystem(Math.round(value_avg))}</span> </li>
+          <li><span>Accuracy </span> <span>{this.startSystem(Math.round(accuracy_avg),20)}</span></li>
+          <li><span>Location </span> <span>{this.startSystem(Math.round(location_avg),20)}</span></li>
+          <li><span>Communication </span>  <span>{this.startSystem(Math.round(communication_avg),20)}</span> </li>
+          <li><span>Check In </span>  <span>{this.startSystem(Math.round(checkin_avg),20)}</span>  </li>
+          <li><span>Cleanliness </span>  <span>{this.startSystem(Math.round(cleanliness_avg),20)}</span> </li>
+          <li><span>Value </span>  <span>{this.startSystem(Math.round(value_avg),20)}</span> </li>
         </ul>
         <ul className='reviewItems'>
           {
