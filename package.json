@@ -15,6 +15,7 @@
     "react-geosuggest": "^2.7.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
+    "react-star-rating-component": "^1.4.1",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",

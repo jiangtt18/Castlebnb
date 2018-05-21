@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-
+import StarRatingComponent from 'react-star-rating-component';
 
 class CastleIndexItem extends React.Component {
   constructor(props) {
@@ -29,7 +29,20 @@ class CastleIndexItem extends React.Component {
             <p className='index-city'>{city}</p>
             <p className='index-title'>{title}</p>
             <p className='index-price'>${price} per night</p>
-            <p className='index-rating'>Rating:{average_rating} {num_guests}</p>
+
+            <div key={`${id}2`} style={{fontSize:10}} className="average-rating-index">
+            <span><StarRatingComponent
+              style={{padding:'20px'}}
+              name="star"
+              editing={false}
+              starCount={5}
+              value={average_rating}
+              starColor={'#008489'}
+              emptyStarColor={'#dce0e0'}
+              starSpacing="5px"
+              /></span>
+            <span><p className='index-rating'> {num_guests}</p></span>
+          </div>
           </div>
         </div>
       </Link>
