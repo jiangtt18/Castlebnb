@@ -26,9 +26,13 @@
   width: 40%;
   margin-bottom: 8px;
   margin-top:8px;
-
 }
 
+.ratings li {
+  display:flex;
+  justify-content: space-between;
+  width:49%;
+}
 .review p {
 // font-weight: normal !important;
 color: #484848 !important;

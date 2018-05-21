@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import StarRatingComponent from 'react-star-rating-component';
 import ReviewIndexItem from './review_index_items.jsx';
 
 class ReviewIndex extends React.Component {
@@ -155,6 +156,22 @@ class ReviewIndex extends React.Component {
     );
   }
 
+  startSystem(rate){
+    return(
+    <div key={`${rate}2`} style={{fontSize:20}} className="average-rating-index">
+           <StarRatingComponent
+             style={{padding:'20px'}}
+             name="star"
+             editing={false}
+             starCount={5}
+             value={rate}
+             starColor={'#008489'}
+             emptyStarColor={'#dce0e0'}
+             starSpacing="5px"
+             />
+         </div>
+    )
+  }
 
   render() {
     let reviews = this.props.review;
@@ -165,13 +182,13 @@ class ReviewIndex extends React.Component {
     return (
       <div className='review'>
         <h3>{reviewDetails.length} Reviews {rating}</h3>
-        <ul>
-          <li>Accuracy {Math.round(accuracy_avg)} </li>
-          <li>Location {Math.round(location_avg)}</li>
-          <li>Communication {Math.round(communication_avg)}</li>
-          <li>Check In { Math.round(checkin_avg)} </li>
-          <li>Cleanliness { Math.round(cleanliness_avg)}</li>
-          <li>Value {Math.round(value_avg)} </li>
+        <ul className ='ratings'>
+          <li><span>Accuracy </span> <span>{this.startSystem(Math.round(accuracy_avg))}</span></li>
+          <li><span>Location </span> <span>{this.startSystem(Math.round(location_avg))}</span></li>
+          <li><span>Communication </span>  <span>{this.startSystem(Math.round(communication_avg))}</span> </li>
+          <li><span>Check In </span>  <span>{this.startSystem(Math.round(checkin_avg))}</span>  </li>
+          <li><span>Cleanliness </span>  <span>{this.startSystem(Math.round(cleanliness_avg))}</span> </li>
+          <li><span>Value </span>  <span>{this.startSystem(Math.round(value_avg))}</span> </li>
         </ul>
         <ul className='reviewItems'>
           {
