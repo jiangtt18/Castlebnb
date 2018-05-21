@@ -4,13 +4,7 @@ class Castle < ApplicationRecord
   :country, presence:true
 
   validates :street_address, uniqueness: true
-  # geocoded_by :address   # can also be an IP address
-  # after_validation :geocode          # auto-fetch coordinates
-  # attr_reader :address
-  # has_many :images,
-  #   primary_key: :id,
-  #   foreign_key: :castle_id,
-  #   class_name: :CastleImage
+
 
   belongs_to :host,
     primary_key: :id,

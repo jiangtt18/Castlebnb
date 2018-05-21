@@ -56,7 +56,7 @@ class ReviewForm extends React.Component {
     handleSubmit(e){
 
       e.preventDefault();
-        debugger;
+    
         if(Object.values(this.props.currentUser).length !== 0){
 
         const castleId = this.props.match.params.castleId;

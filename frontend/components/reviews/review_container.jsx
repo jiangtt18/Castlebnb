@@ -5,9 +5,10 @@ import { withRouter } from 'react-router-dom';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
+
   return{
     reviews:Object.values(state.entities.reviews)
-             .filter(review => review.castle_id === ownProps.match.params.castleId),
+             .filter(review => review.castle_id == ownProps.match.params.castleId),
     currentUser: state.session.currentUser || {},
     castle: state.entities.castles[ownProps.match.params.castleId],
     errors:state.errors.reviews,

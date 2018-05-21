@@ -10,7 +10,7 @@ import { openModal } from '../../actions/modal_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     castle: state.entities.castles[ownProps.match.params.castleId],
-    review: state.entities.reviews,
+    
     currentUser: state.session.currentUser || {},
     bookingErrors:state.errors.bookings,
   };

@@ -14,11 +14,6 @@ class Review < ApplicationRecord
     foreign_key: :reviewer_id,
     class_name: :User
 
- # def allow_review
- #   if Castle.find(self.castle_id).host.id == self.reviewer_id
- #     errors.add(:review, " can not be made for own home posting.")
- #   end
- # end
 
 
 

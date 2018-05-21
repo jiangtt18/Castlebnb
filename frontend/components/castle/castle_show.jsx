@@ -116,7 +116,7 @@ class CastleShow extends React.Component{
                 </div>
             </div>
             <ReviewIndexContainer
-               review = {this.props.review}
+               
             />
           </div>
 

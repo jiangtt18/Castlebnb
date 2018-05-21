@@ -29,7 +29,7 @@ class ReviewIndex extends React.Component {
   }
 
   render() {
-    let reviews = this.props.review;
+    let reviews = this.props.reviews;
     let {accuracy_avg, communication_avg, cleanliness_avg,
     value_avg, checkin_avg, location_avg, rating} = this.props.castle;
     let reviewDetails = Object.values(reviews);
@@ -63,7 +63,7 @@ class ReviewIndex extends React.Component {
         <button className='reviewButton' onClick={() => this.props.openModal('review')}>
           Write a review
         </button>
-  
+
 
       </div>
     );
