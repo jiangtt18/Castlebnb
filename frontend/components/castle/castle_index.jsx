@@ -24,10 +24,13 @@ class CastleIndex extends React.Component {
       <div>
         <div className='exploreTab'>
           <h3>Explore Castlebnb</h3>
+
           <img
-            src='http://res.cloudinary.com/doohtqbau/image/upload/v1523652055/ancient-architecture-building-749078_ah1q68.jpg'
+            className = 'landing-Pic'
+            src='http://res.cloudinary.com/doohtqbau/image/upload/v1526873625/castles/potential1.jpg'
             alt='awesome background picture'
           />
+
           <h3>Castles around the world</h3>
         </div>
         <ul className='castle-index'>

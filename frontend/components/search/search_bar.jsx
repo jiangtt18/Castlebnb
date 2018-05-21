@@ -15,6 +15,7 @@ class SearchBar extends React.Component {
 
 
   handleDestination(value) {
+    debugger;
       if (value && value.location) {
         console.log(value);
         const lat = value.location.lat;

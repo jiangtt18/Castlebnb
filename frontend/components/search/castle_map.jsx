@@ -12,13 +12,15 @@ class Map extends React.Component {
     super(props);
   }
 
+
   componentDidMount () {
     const mapDOMNode = this.refs.map;
+
     let mapOptions;
     if(this.props.lat !== "" && this.props.lat !== undefined) {
       mapOptions = {
         center: {lat: parseFloat(this.props.lat), lng: parseFloat(this.props.lng)},
-        zoom: 13
+        zoom: 9
       };
     }
     else {
@@ -40,7 +42,7 @@ class Map extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-  
+
     if (this.props.lat !== newProps.lat && this.props.lng !== newProps.lng){
       this.map.setOptions({
         center: {lat: parseFloat(newProps.lat), lng: parseFloat(newProps.lng)},

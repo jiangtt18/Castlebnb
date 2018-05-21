@@ -18,10 +18,27 @@
   color: #484848 ;
 }
 
+// .landing{
+//     height: 350px;
+//     width:1048px;
+//     position:relative;
+// }
 .exploreTab img {
   height: 350px;
+  width:100%;
+  // position:absolute;
+ //  -webkit-animation: myMove 3s;
+ // -moz-animation: myMove 3s;
+ // -o-animation: myMove 3s;
+ // animation: myMove 3s;
 }
 
+
+@-webkit-keyframes myMove {
+    0%   { -webkit-transform: scale(1); }
+    50%  { -webkit-transform: translate3d(0, 0, 0);}
+    100% { -webkit-transform: scale(0.5), translate3d(-450px, -350px, 0);}
+}
 
 .castle-index{
   display:flex;
@@ -81,6 +98,7 @@
   letter-spacing: 0.2px ;
   display: inline;
 }
+
 
 .castle-index img {
   width:100%;
