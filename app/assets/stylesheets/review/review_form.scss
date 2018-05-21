@@ -1,0 +1,57 @@
+ .flex-review-form {
+     background: white;
+    display: flex;
+    justify-content: center;
+    width: 700px;
+    padding: 20px;
+}
+
+.review-form {
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.review-form-input > form {
+  width: auto;
+}
+//
+.review-form-header {
+  margin-bottom: 15px;
+}
+
+.review-form-title {
+  font-family: sans-serif;
+  font-weight: 400;
+  color: #484848;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.review-textarea {
+  width: 440px;
+  height: 130px;
+  font-family: sans-serif;
+  font-weight: 300;
+  color: #484848;
+  font-size: 14px;
+  padding:7px;
+  border: 1px solid;
+}
+
+.review-form-title-thin {
+  font-family: sans-serif;
+  font-weight: 100;
+  color: #484848;
+  font-size: 14px;
+  // padding-left: 3px;
+  padding-top: 3px;
+}
+
+.review-label {
+  margin-top:15px;
+}
+
+.stars {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}

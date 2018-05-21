@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import SignupContainer from '../session/signup_container';
 import LoginContainer from '../session/login_container';
+import ReviewFormContainer from '../reviews/reviewForm_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -16,12 +17,15 @@ function Modal({modal, closeModal}) {
     case 'signup':
       component = <SignupContainer />;
       break;
+    case 'review':
+      component = <ReviewFormContainer />;
+      break;
     default:
       return null;
   }
   return (
     <div className="modal-background" onClick={closeModal}>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
+      <div  id='review-child-form' className="modal-child" onClick={e => e.stopPropagation()}>
         { component }
       </div>
     </div>

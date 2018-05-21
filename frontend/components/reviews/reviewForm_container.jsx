@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { fetchReviews, createReview, receiveReviewErrors } from '../../actions/review_action';
-import ReviewIndex from './review_index';
 import { withRouter } from 'react-router-dom';
+import { fetchReviews, createReview, receiveReviewErrors } from '../../actions/review_action';
+import ReviewForm from './review_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -16,12 +16,12 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return{
+    closeModal: () => dispatch(closeModal()),
+    openModal:(type) => dispatch(openModal(type)),
     clearErrors: () => dispatch(receiveReviewErrors([])),
     fetchReviews: (castleId) => dispatch(fetchReviews(castleId)),
     createReview: (review) => dispatch(createReview(review)),
-    openModal:(type) => dispatch(openModal(type)),
-
   };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ReviewIndex));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ReviewForm));

@@ -1,159 +1,13 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import StarRatingComponent from 'react-star-rating-component';
+import Modal from "react-modal";
 import ReviewIndexItem from './review_index_items.jsx';
+import ReviewFromContainer from './reviewForm_container.jsx';
 
 class ReviewIndex extends React.Component {
   constructor(props){
-
     super(props);
-    this.state = {showCreate: false,
-                  comment: '',
-                  accuracy: '',
-                  communication:'',
-                  cleanliness:'',
-                  location:'',
-                  value:'',
-                  checkin:'',
-                  reviewer_id:'',
-                  castle_id:'',
-                };
-
-    this.handleAddReview = this.handleAddReview.bind(this);
-    this.handleCreateReview = this.handleCreateReview.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.clearState = this.clearState.bind(this);
-  }
-
-  update(property) {
-    return e => {
-      this.setState({[property]: e.target.value});
-    };
-  }
-
-  handleAddReview(e) {
-    e.preventDefault();
-    this.setState({showCreate: true});
-  }
-
-
-  handleCreateReview() {
-    const {comment, accuracy, communication, cleanliness, location,checkin, value} = this.state;
-    if (this.state.showCreate === false) {
-      return <div></div>;
-    }
-    return (
-      <div className='reviewForm'>
-        <div>
-          <h1>Describe Your Experience</h1>
-          <textarea
-            value={comment}
-            onChange={this.update("comment")}
-            />
-          <div>
-          <select onChange={this.update("accuracy")}>
-              <option defaultValue value="">accuracy </option>
-              <option value='1'>1 star</option>
-              <option value='2'>2 stars</option>
-              <option value='3'>3 stars</option>
-              <option value='4'>4 stars</option>
-              <option value='5'>5 stars</option>
-          </select>
-          <select onChange={this.update("communication")}>
-              <option defaultValue value="">communication </option>
-              <option value='1'>1 star</option>
-              <option value='2'>2 stars</option>
-              <option value='3'>3 stars</option>
-              <option value='4'>4 stars</option>
-              <option value='5'>5 stars</option>
-          </select>
-          <select onChange={this.update("cleanliness")}>
-              <option defaultValue value="">cleanliness </option>
-              <option value='1'>1 star</option>
-              <option value='2'>2 stars</option>
-              <option value='3'>3 stars</option>
-              <option value='4'>4 stars</option>
-              <option value='5'>5 stars</option>
-          </select>
-          <select onChange={this.update("location")}>
-              <option defaultValue value="">location </option>
-              <option value='1'>1 star</option>
-              <option value='2'>2 stars</option>
-              <option value='3'>3 stars</option>
-              <option value='4'>4 stars</option>
-              <option value='5'>5 stars</option>
-          </select>
-          <select onChange={this.update("checkin")}>
-              <option defaultValue value="">checkin </option>
-              <option value='1'>1 star</option>
-              <option value='2'>2 stars</option>
-              <option value='3'>3 stars</option>
-              <option value='4'>4 stars</option>
-              <option value='5'>5 stars</option>
-          </select>
-          <select onChange={this.update("value")}>
-              <option defaultValue value="">value </option>
-              <option value='1'>1 star</option>
-              <option value='2'>2 stars</option>
-              <option value='3'>3 stars</option>
-              <option value='4'>4 stars</option>
-              <option value='5'>5 stars</option>
-          </select>
-          </div>
-
-          <button className='reviewButton' onClick={this.handleSubmit} >Submit</button>
-        </div>
-      </div>
-    );
-  }
-
-  clearState() {
-    this.setState({showCreate: false,
-                    comment: '',
-                    accuracy: '',
-                    communication:'',
-                    cleanliness:'',
-                    location:'',
-                    value:'',
-                    checkin:'',
-                    reviewer_id:'',
-                    castle_id:'',
-                  });
-  }
-
-  handleSubmit(e) {
-      const castleId = parseInt(this.props.match.params.castleId);
-
-
-      const reviewerId = this.props.currentUser.id;
-      const review = Object.assign({}, this.state, {
-      castle_id: castleId, reviewer_id:reviewerId
-    });
-
-      this.props.createReview(review)
-      .then(() => {
-        if (this.props.errors.length === 0) {
-          this.clearState();
-        }
-      }
-      );
-
-  }
-
-  componentDidMount() {
-      this.props.clearErrors();
-    }
-
-  renderErrors() {
-    return (
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li className="errors" key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
   }
 
   startSystem(rate, size){
@@ -205,12 +59,11 @@ class ReviewIndex extends React.Component {
           ))
           }
         </ul>
-        <button className='reviewButton' onClick={this.handleAddReview}>
+        <button className='reviewButton' onClick={() => this.props.openModal('review')}>
           Write a review
         </button>
 
-          {this.renderErrors()}
-          {this.handleCreateReview()}
+
       </div>
     );
   }
