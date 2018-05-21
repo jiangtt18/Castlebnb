@@ -16,7 +16,7 @@ class BookingIndexItem extends React.Component {
     return(
       <li className='drop_down_list'>
       <span><button onClick={this.handleDelete}><i class="fa fa-trash-alt"></i></button></span>
-      <div>
+      <div className = 'trip'>
         <span>{this.props.mytrip.castle.title} </span>
         <span>{this.props.mytrip.check_in} </span>
         <span>{this.props.mytrip.check_out}</span>

@@ -20,11 +20,14 @@
 
   height: 40px;
   padding: 0px;
-  padding-Left:20px;
+  padding-Left:35px;
   padding-Top: 2px;
   font-Size: 16px;
-
-
+  background-image: url(https://res.cloudinary.com/dsguwnfdw/image/upload/v1478390875/Icons/magnifying-glass.png);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: 1% 50%;
+  resize: none;
 }
 .geosuggest__input:focus {
   border-color: #267dc0;

@@ -9,15 +9,19 @@
 .drop_down_list {
   display:flex;
   padding-right: 25px;
-  overflow: scroll;
+    overflow: scroll;
+
   // justify-content: space-between;
 }
-.drop_down_list:hover #trip {
+
+
+.drop_down_list:hover {
   background: #f00;
   border-bottom: none;
-  text-overflow:ellipsis;
-  overflow: hidden;
+
 }
+
+
 
 .drop_down_list button {
   margin-top: 0px;

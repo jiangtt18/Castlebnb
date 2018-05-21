@@ -46,9 +46,10 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className = 'search_bar'>
+
       <Geosuggest
           className="search-input"
-          placeholder="Where to?"
+          placeholder="Try San Francisco"
           id="top-bar"
           onChange ={this.update('destination')}
           onSuggestSelect={this.handleDestination}
