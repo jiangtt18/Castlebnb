@@ -1,4 +1,5 @@
 import React from 'react';
+import {Route} from 'react-router-dom';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import SignupContainer from '../session/signup_container';
@@ -18,7 +19,7 @@ function Modal({modal, closeModal}) {
       component = <SignupContainer />;
       break;
     case 'review':
-      component = <ReviewFormContainer />;
+      component = <Route path="/castles/:castleId" component={ReviewFormContainer} />;
       break;
     default:
       return null;

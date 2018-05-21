@@ -27,10 +27,11 @@ class ReviewForm extends React.Component {
       }
 
     renderErrors() {
-      return (
-        <ul>
-          {this.props.errors.map((error, i) => (
-            <li className="errors" key={`error-${i}`}>
+      return(
+        <ul className='error' >
+
+          {this.props.errors.map((error,i) => (
+            <li key = {`errors-${i}`}>
               {error}
             </li>
           ))}
@@ -53,9 +54,12 @@ class ReviewForm extends React.Component {
     }
 
     handleSubmit(e){
+
       e.preventDefault();
-        if(this.props.currentUser){
-        const castleId = parseInt(this.props.match.params.castleId);
+        debugger;
+        if(Object.values(this.props.currentUser).length !== 0){
+
+        const castleId = this.props.match.params.castleId;
         const reviewerId = this.props.currentUser.id;
         const review = Object.assign({}, this.state, {
         castle_id: castleId, reviewer_id:reviewerId
@@ -70,6 +74,7 @@ class ReviewForm extends React.Component {
         }
         );
       } else {
+
         this.props.openModal('login');
       }
     }
@@ -110,7 +115,7 @@ class ReviewForm extends React.Component {
 
               <form onSubmit={this.handleSubmit}>
                 <div onClick={() =>this.props.closeModal()} className="close-x"><i className="fa fa-times"></i></div>
-
+                  {this.renderErrors()}
                 <textarea
                   className="review-textarea"
                   value={comment}

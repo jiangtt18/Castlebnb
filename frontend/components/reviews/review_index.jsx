@@ -4,6 +4,7 @@ import StarRatingComponent from 'react-star-rating-component';
 import Modal from "react-modal";
 import ReviewIndexItem from './review_index_items.jsx';
 import ReviewFromContainer from './reviewForm_container.jsx';
+import ReviewModal from '../modal/modal.jsx';
 
 class ReviewIndex extends React.Component {
   constructor(props){
@@ -62,7 +63,7 @@ class ReviewIndex extends React.Component {
         <button className='reviewButton' onClick={() => this.props.openModal('review')}>
           Write a review
         </button>
-
+  
 
       </div>
     );

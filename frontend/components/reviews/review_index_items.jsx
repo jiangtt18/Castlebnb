@@ -7,7 +7,6 @@ class ReviewIndexItem extends React.Component {
   }
 
   render(){
-
     const {reviewer_id,created_at,comment,reviewerName} = this.props.review;
     const date = new Date(created_at);
     const dates = date.toDateString().split(' ');
