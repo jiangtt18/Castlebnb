@@ -10,7 +10,7 @@ class SearchIndex extends React.Component {
 
     const castles = Object.values(this.props.castles);
     return castles.map((castle)=> {
-      return <ul className="spot" >
+      return <ul className="spot"  key={`${castle.id}`} >
         <CastleIndexItem castle={castle} />
       </ul>;
     });
