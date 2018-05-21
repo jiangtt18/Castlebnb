@@ -9,6 +9,7 @@
 .drop_down_list {
   display:flex;
   padding-right: 25px;
+  overflow: scroll;
   // justify-content: space-between;
 }
 .drop_down_list:hover #trip {
