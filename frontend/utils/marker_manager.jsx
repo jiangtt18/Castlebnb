@@ -1,7 +1,6 @@
 export default class MarkerManager {
-  constructor(map, handleClick) {
+  constructor(map) {
     this.map = map;
-    this.handleClick = handleClick;
     this.markers = {};
   }
 
@@ -25,7 +24,11 @@ export default class MarkerManager {
   }
 
   createMarkerFromCastle(castle) {
+    const imageUrl = castle.imageUrl;
 
+    var infowindow = new google.maps.InfoWindow({
+       content: `<img src =${imageUrl}  />`
+     });
     const position = { lng: castle.lng, lat: castle.lat };
 
     const marker = new google.maps.Marker({
@@ -35,7 +38,7 @@ export default class MarkerManager {
     });
     marker.addListener('click',
     () =>{
-    this.handleClick(castle);
+      infowindow.open(this.map, marker);
 
     });
 

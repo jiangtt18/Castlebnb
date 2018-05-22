@@ -31,7 +31,7 @@ class Map extends React.Component {
     }
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this._registerListeners();
-    this.MarkerManager = new MarkerManager(this.map, this._handleMarkerClick.bind(this));
+    this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.updateMarkers(this.props.castles);
 
   }
