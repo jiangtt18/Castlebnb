@@ -6,14 +6,13 @@ export default class MarkerManager {
   }
 
   updateMarkers(castles) {
-  
+
     const castleKeys = Object.keys(castles);
     const markerKeys = Object.keys(this.markers);
 
     castleKeys.forEach((id) => {
       if (!this.markers[id]) {
         const castle = castles[id];
-
         this.createMarkerFromCastle(castle);
       }
     });
@@ -34,7 +33,12 @@ export default class MarkerManager {
       map: this.map,
       id: castle.id
     });
-    marker.addListener('click', () => this.handleClick(castle));
+    marker.addListener('click',
+    () =>{
+    this.handleClick(castle);
+
+    });
+
     this.markers[marker.id] = marker;
   }
 

@@ -31,9 +31,9 @@ class Map extends React.Component {
     }
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this._registerListeners();
-    this.MarkerManager = new MarkerManager(this.map);
-
+    this.MarkerManager = new MarkerManager(this.map, this._handleMarkerClick.bind(this));
     this.MarkerManager.updateMarkers(this.props.castles);
+
   }
 
   componentDidUpdate() {
@@ -62,8 +62,20 @@ class Map extends React.Component {
   }
 
   _handleMarkerClick(castle) {
+    const imageUrl = castle.imageUrl;
 
-    this.props.history.push(`castles/${castle.id}`);
+    var infowindow = new google.maps.InfoWindow({
+       content: `<img src =${imageUrl}  />`
+     });
+     const position = { lng: castle.lng, lat: castle.lat };
+     const marker = new google.maps.Marker({
+       position,
+       map: this.map,
+       id: castle.id
+     });
+    infowindow.open(this.map, marker);
+    // this.props.history.push(`castles/${castle.id}`);
+
   }
 
   render() {
