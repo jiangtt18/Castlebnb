@@ -1,7 +1,20 @@
+
+@media only screen and (max-width: 1920px){
+footer {
+  width: 1600px;
+  }
+}
+
+@media only screen and (max-width: 1280px){
+footer {
+    width: 1000px;
+  }
+}
+
 footer {
   display: flex;
   justify-content: space-between;
-  width: 900px;
+
   margin: 0 auto 0px auto;
   background: #fff;
   color: #aaa;
