@@ -15,18 +15,18 @@ class SearchBar extends React.Component {
 
 
   handleDestination(value) {
-
+  
       if (value && value.location) {
         console.log(value);
-        const lat = value.location.lat;
-        const lng = value.location.lng;
+        const lat = value.location.lat || SFLat;
+        const lng = value.location.lng || SFLng;
         this.props.searchCastles(this.state.destination)
         .then(
         this.props.history.replace({
           pathname:"/search",
           query: {
-          lat: value.location.lat,
-          lng: value.location.lng
+          lat: lat,
+          lng: lng
         }
         })
       );
