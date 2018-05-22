@@ -24,7 +24,9 @@ class CastleIndex extends React.Component {
       <div>
         <div className='exploreTab'>
           <h3>Explore Castlebnb</h3>
-
+            <p id='purpose'>
+              Explore castles across the world for your wedding & honeymoon
+            </p>
           <img
             className = 'landing-Pic'
             src='http://res.cloudinary.com/doohtqbau/image/upload/v1526873625/castles/potential1.jpg'

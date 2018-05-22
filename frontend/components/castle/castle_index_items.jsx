@@ -25,6 +25,7 @@ class CastleIndexItem extends React.Component {
           <img
              src={imageUrl} alt='awesome castle pic'
           />
+
           <div className="index-item-info">
             <p className='index-city'>{city}</p>
             <p className='index-title'>{title}</p>
