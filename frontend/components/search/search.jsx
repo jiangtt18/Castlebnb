@@ -10,7 +10,7 @@ class Search extends React.Component {
     const SFLng =-122.431297;
     let lat;
     let lng;
-        debugger;
+  
     if(this.props.location.query === undefined){
       lat = SFLat;
       lng = SFLng;
