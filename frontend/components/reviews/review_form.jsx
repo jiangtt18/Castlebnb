@@ -56,7 +56,7 @@ class ReviewForm extends React.Component {
     handleSubmit(e){
 
       e.preventDefault();
-    
+
         if(Object.values(this.props.currentUser).length !== 0){
 
         const castleId = this.props.match.params.castleId;
@@ -98,6 +98,18 @@ class ReviewForm extends React.Component {
       });
     }
 
+    handleStarClick(name){
+      return(
+        <div className="stars" style={{fontSize:28}} >
+        <StarRatingComponent
+          name={name}
+          starCount={5}
+          onStarClick={this.onStarClick.bind(this)}
+          starColor={'#008489'}
+          emptyStarColor={'#dce0e0'}
+          />
+        </div>
+    )}
     render(){
       const {comment, accuracy, communication, cleanliness, location,checkin, value} = this.state;
 
@@ -126,82 +138,33 @@ class ReviewForm extends React.Component {
                   <p className="review-form-title-thin">Was the home description accurate?</p>
                 </div>
                 <div>
-                  <div className="stars" style={{fontSize:28}} >
-                  <StarRatingComponent
-                    name={"accuracy"}
-                    starCount={5}
-                    onStarClick={this.onStarClick.bind(this)}
-                    starColor={'#008489'}
-                    emptyStarColor={'#dce0e0'}
-                    />
-                  </div>
+                  {this.handleStarClick("accuracy")}
                 </div>
                 <div className="review-label">
                   <label className="review-form-title">Communication</label>
                   <p className="review-form-title-thin">How clearly did the host communicate plans, questions and concerns?</p>
                 </div>
-                <div className="stars" style={{fontSize:28}} >
-                  <StarRatingComponent
-
-                    name={"communication"}
-                    starCount={5}
-                    onStarClick={this.onStarClick.bind(this)}
-                    starColor={'#008489'}
-                    emptyStarColor={'#dce0e0'}
-                    />
-                </div>
+                  {this.handleStarClick("communication")}
                 <div className="review-label">
                   <label className="review-form-title">Cleanliness</label>
                   <p className="review-form-title-thin">Was the home clean on your arrival?</p>
                 </div>
-                <div className="stars" style={{fontSize:28}} >
-                <StarRatingComponent
-                  name={"cleanliness"}
-                  starCount={5}
-                  onStarClick={this.onStarClick.bind(this)}
-                  starColor={'#008489'}
-                  emptyStarColor={'#dce0e0'}
-                  />
-                </div>
+                {this.handleStarClick("cleanliness")}
                 <div className="review-label">
                   <label className="review-form-title">Location</label>
                   <p className="review-form-title-thin">How would you rate the location of the home?</p>
                 </div>
-                <div className="stars" style={{fontSize:28}} >
-                <StarRatingComponent
-                  name={"location"}
-                  starCount={5}
-                  onStarClick={this.onStarClick.bind(this)}
-                  starColor={'#008489'}
-                  emptyStarColor={'#dce0e0'}
-                  />
-                </div>
+                {this.handleStarClick("location")}
                 <div className="review-label">
                   <label className="review-form-title">Checkin</label>
                   <p className="review-form-title-thin">How timely and easy was your check in?</p>
                 </div>
-                <div className="stars" style={{fontSize:28}} >
-                <StarRatingComponent
-                  name={"checkin"}
-                  starCount={5}
-                  onStarClick={this.onStarClick.bind(this)}
-                  starColor={'#008489'}
-                  emptyStarColor={'#dce0e0'}
-                  />
-                </div>
+                  {this.handleStarClick("checkin")}
                 <div className="review-label">
                   <label className="review-form-title">Value</label>
                   <p className="review-form-title-thin">How would you rate the value of the home for the price?</p>
                 </div>
-                <div className="stars" style={{fontSize:28}} >
-                <StarRatingComponent
-                  name={"value"}
-                  starCount={5}
-                  onStarClick={this.onStarClick.bind(this)}
-                  starColor={'#008489'}
-                  emptyStarColor={'#dce0e0'}
-                  />
-                </div>
+                  {this.handleStarClick("value")}
 
                 <input
                   className="submit-booking"
