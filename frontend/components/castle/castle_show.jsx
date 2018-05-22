@@ -31,30 +31,30 @@ class CastleShow extends React.Component{
 
   renderAmenities() {
     const{is_AV_Equipment,is_ampleParking,is_carriage,is_wifi, is_oceanView,
-    is_gardenView} = this.props.castle;
+    is_gardenView,price} = this.props.castle;
     const enviroment =['is_AV_Equipment','is_ampleParking','is_carriage','is_wifi', 'is_oceanView',
     'is_gardenView'];
 
-    return enviroment.map(criteria => {
+    return enviroment.map((criteria) => {
 
       switch (criteria) {
         case 'is_AV_Equipment':
-          if (is_AV_Equipment) return <li>Ample Parking</li>   ;
+          if (is_AV_Equipment) return <li key='AV'>Ample Parking</li>   ;
           break;
         case 'is_ampleParking':
-          if (is_ampleParking) return <li>Ample Parking</li>   ;
+          if (is_ampleParking) return <li key='parking'>Ample Parking</li>   ;
           break;
         case 'is_carriage':
-          if (is_carriage) return <li>Carriage</li>;
+          if (is_carriage) return <li key='carriage'>Carriage</li>;
           break;
         case 'is_wifi':
-          if (is_wifi)return <li>Wifi</li>;
+          if (is_wifi)return <li key='wifi'>Wifi</li>;
           break;
         case 'is_oceanView':
-          if (is_oceanView)  return <li>Ocean View</li>;
+          if (is_oceanView)  return <li key='ocean'>Ocean View</li>;
           break;
         case ('is_gardenView'):
-          if (is_gardenView) return <li>Garden View</li>;
+          if (is_gardenView) return <li key='garden'>Garden View</li>;
           break;
       }
     });
@@ -116,7 +116,7 @@ class CastleShow extends React.Component{
                 </div>
             </div>
             <ReviewIndexContainer
-               
+
             />
           </div>
 
