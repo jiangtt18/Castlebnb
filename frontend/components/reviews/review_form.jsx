@@ -156,7 +156,7 @@ class ReviewForm extends React.Component {
                 </div>
                 {this.handleStarClick("location")}
                 <div className="review-label">
-                  <label className="review-form-title">Checkin</label>
+                  <label className="review-form-title">Check in</label>
                   <p className="review-form-title-thin">How timely and easy was your check in?</p>
                 </div>
                   {this.handleStarClick("checkin")}
