@@ -18,7 +18,7 @@ Users begin at the home page where they can view homes whether they are logged i
 Castles have methods that allow them to carry reviews metadata: the average review rating and the number of reviews. When a user enters the show page and the app makes a request to the database, the database returns both the castle and the castle's reviews in one castle object. This enables the app to avoid querying multiple times.
 Review form utilizes React star rating component that creates clean and perfect look, achieving smooth and interactive user interface.
 
-
+![index](app/assets/images/screenshot/review.gif)
 
 
 The booking form itself was modeled after Airbnb's booking form. Since the user data is stored globally, users can leave this section and come back without losing their data. The form validates users' credential and will redirect user to log-in page if user was not logged in. It also validates overlapping dates and max guest numbers. Error messages will be rendered if validation fails. Upon success submission, a drop-down list will pop up automatically under navigation bar containing all booking records.
