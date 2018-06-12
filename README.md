@@ -29,15 +29,7 @@ The booking form itself was modeled after Airbnb's booking form. Since the user 
 
 In addition to the features already implemented, I plan to continue work on this project. The next steps for HairBNB are outlined below.
 
-- Styling
-  - customize google map marker
-  - implement star rating
-  - adding gif/video for homepage theme background
-  - improve image quality
 
 - Profiles
   - user can interact with other users to exchange information
   - hosts are able to approve reservations
-
-- Search
-  - filter the search results to only include listings that aren't already booked.
