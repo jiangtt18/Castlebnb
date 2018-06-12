@@ -13,12 +13,10 @@ Users begin at the home page where they can view homes whether they are logged i
 
 ![index](app/assets/images/screenshot/search.gif)
 
- At any time, the user can click the logo in the top left corner to navigate to the homepage.
-
-
- Upon entering the site, the app immediately queries the database to pull the selected 12 picks and render them to the page. Otherwise, the database renders dynamically depending on which page you're viewing.
+ At any time, the user can click the logo in the top left corner to navigate to the homepage.Upon entering the site, the app immediately queries the database to pull the selected 12 picks and render them to the page. Otherwise, the database renders dynamically depending on which page you're viewing.
 
 Castles have methods that allow them to carry reviews metadata: the average review rating and the number of reviews. When a user enters the show page and the app makes a request to the database, the database returns both the castle and the castle's reviews in one castle object. This enables the app to avoid querying multiple times.
+Review form utilizes React star rating component that creates clean and perfect look, achieving smooth and interactive user interface.
 
 
 
