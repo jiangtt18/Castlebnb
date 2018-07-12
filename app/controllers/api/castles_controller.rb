@@ -5,6 +5,8 @@ class Api::CastlesController < ApplicationController
 
     if params[:search] # from app component wild card
       @castles = Castle.search(search_params[:search_words])
+      # get searchQuery data from Ajax call. and search in database through model method
+      # Jbuilder will read and render
     end
 
   end
