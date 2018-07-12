@@ -17,6 +17,9 @@ export const searchCastles = (searchQuery) => {
   return $.ajax({
     method: 'GET',
     url: 'api/castles',
-    data: { search:{search_words:searchQuery}} // data sent from database to frontend
-  });
+    data: { search:{search_words:searchQuery}} 
+    // put search query under keyword {search: {search_words:}} 
+    // need require(:search) permit(:search_words) in controller. otherwise searchQuery value will not be allowed to udpate
+    
 };
+
