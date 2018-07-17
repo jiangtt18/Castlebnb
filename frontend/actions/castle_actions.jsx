@@ -14,7 +14,8 @@ export const receiveCastles = (castles) => {
 };
 
 export const receiveCastle = (payload) => {
-
+// use payload to access two diifferent keys (reviews & castle)
+// data is formatted in the Jbuilder
   return ({
     type: RECEIVE_CASTLE,
     castle: payload.castle,
