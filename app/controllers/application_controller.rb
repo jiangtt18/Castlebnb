@@ -33,3 +33,8 @@ class ApplicationController < ActionController::Base
  end
 
 end
+
+# login/ logout : 
+# 1 reset session token;
+# 2 browser update value for key session (assign new session token / set to nil)
+# 3 browswer update current user status
