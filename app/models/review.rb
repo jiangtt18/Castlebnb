@@ -3,7 +3,7 @@ class Review < ApplicationRecord
    :value, :checkin, inclusion: { in: (1..5) },presence: true
   # validate :allow_review
 
- belongs_to :castle,
+  belongs_to :castle,
   primary_key: :id,
   foreign_key: :castle_id,
   class_name: :Castle
@@ -13,8 +13,5 @@ class Review < ApplicationRecord
     primary_key: :id,
     foreign_key: :reviewer_id,
     class_name: :User
-
-
-
-
+    
 end
