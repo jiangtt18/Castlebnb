@@ -45,14 +45,14 @@ export const fetchReviews = (castleId) => dispatch => (
 
 export const createReview = review => dispatch => (
   ReviewAPI.createReview(review)
-    .then(
-      (resReview) =>  dispatch(receiveReview(resReview)),
-      (errors) => dispatch(receiveReviewErrors(errors.responseJSON))
+  .then(
+    (resReview) =>  dispatch(receiveReview(resReview)),
+    (errors) => dispatch(receiveReviewErrors(errors.responseJSON))
     )
 );
 
 
 export const deleteReview = id => dispatch =>(
   ReviewAPI.deleteReview(id)
-    .then(() => dispatch(removeReview(id)))
+  .then(() => dispatch(removeReview(id)))
 );

@@ -42,7 +42,7 @@ export const fetchCastles = () => dispatch => (
 
 export const fetchCastle = id => dispatch => (
   CastleAPI.fetchCastle(id)
-    .then(
+  .then(
     payload => dispatch(receiveCastle(payload)),
     errors => dispatch(receiveCastleErrors(errors.responseJSON))
   )

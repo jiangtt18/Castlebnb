@@ -44,13 +44,13 @@ export const fetchBookings = (guestId) => dispatch => (
   )
 );
 
-
 export const createBooking = booking => dispatch => (
   BookingAPI.createBooking(booking)
-    .then((resbooking) =>  {
-      dispatch(openDropdown());
-      dispatch(receiveBooking(resbooking));
-      setTimeout(() => dispatch(closeDropdown()), 2500);
+    .then(
+      (resbooking) =>  {
+        dispatch(openDropdown());
+        dispatch(receiveBooking(resbooking));
+        setTimeout(() => dispatch(closeDropdown()), 2500);
     },
       (errors) => dispatch(receiveBookingErrors(errors.responseJSON))
     )
