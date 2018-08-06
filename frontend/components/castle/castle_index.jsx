@@ -8,7 +8,6 @@ class CastleIndex extends React.Component {
     this.props.fetchCastles();
   }
 
-
   render(){
 
     if (Object.keys(this.props.castles).length === 0) {
@@ -30,26 +29,19 @@ class CastleIndex extends React.Component {
           <img
             className = 'landing-Pic'
             src='http://res.cloudinary.com/doohtqbau/image/upload/v1526873625/castles/potential1.jpg'
-            alt='awesome background picture'
-          />
-
+            alt='awesome background picture' />
           <h3>Castles around the world</h3>
         </div>
+
         <ul className='castle-index'>
-
-        {featuredCastles.map(castle => (
-
-          <CastleIndexItem
-            castle={castle}
-            key={castle.id}
-            />
-
-        ))}
+          {featuredCastles.map(castle => (
+            <CastleIndexItem
+              castle={castle}
+              key={castle.id} />
+          ))}
         </ul>
-
       </div>
     );
-
   }
 }
 

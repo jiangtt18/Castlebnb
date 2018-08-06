@@ -8,7 +8,6 @@ class GuestBooking extends React.Component{
 
   componentDidMount() {
    this.props.fetchMyTrips(this.props.currentUser.id);
-
   }
 
   renderTrips() {
