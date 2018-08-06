@@ -12,21 +12,22 @@ class BookingIndexItem extends React.Component {
     this.props.deleteTrip(this.props.mytrip.id);
   }
 
-  render() {
+  render(){
     return(
       <li className='drop_down_list'>
-      <span><button onClick={this.handleDelete}><i class="fa fa-trash-alt"></i></button></span>
-      <div className = 'trip'>
-        <span>{this.props.mytrip.castle.title} </span>
-        <span>{this.props.mytrip.check_in} </span>
-        <span>{this.props.mytrip.check_out}</span>
-      </div>
-
+        <span>
+          <button onClick={this.handleDelete}>
+            <i class="fa fa-trash-alt"></i>
+          </button>
+        </span>
+        <div className = 'trip'>
+          <span>{this.props.mytrip.castle.title}</span>
+          <span>{this.props.mytrip.check_in} </span>
+          <span>{this.props.mytrip.check_out}</span>
+        </div>
       </li>
     );
   }
-
-
 }
 
 export default withRouter(BookingIndexItem);
