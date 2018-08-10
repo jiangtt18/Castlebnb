@@ -2,7 +2,7 @@ export const fetchBookings = (guestId) => (
   $.ajax({
     method: 'GET',
     url: '/api/bookings',
-    data: {guestId}
+    data: {guestId} // guestId: guestId
   })
 );
 

@@ -50,9 +50,9 @@ class BookingForm extends React.Component {
       num_guests:this.state.numGuests
     };
 
-    this.props.createBooking(fetchInfo).then(() => {
-      this.props.clearBookingErrors();
-    });
+    this.props.createBooking(fetchInfo);
+    this.props.clearBookingErrors();
+
 
   }
 

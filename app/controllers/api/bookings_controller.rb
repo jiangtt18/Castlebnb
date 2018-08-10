@@ -4,6 +4,7 @@ class Api::BookingsController < ApplicationController
   def index
 
     user = User.find_by(id: params[:guestId])
+    # params - guesdId is from key guestId from ajax data;
      if user
        @bookings = user.trips
      else
