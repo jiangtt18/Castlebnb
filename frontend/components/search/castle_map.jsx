@@ -19,7 +19,10 @@ class Map extends React.Component {
     let mapOptions;
     if(this.props.lat !== "" && this.props.lat !== undefined) {
       mapOptions = {
-        center: {lat: parseFloat(this.props.lat), lng: parseFloat(this.props.lng)},
+        center: {
+          lat: parseFloat(this.props.lat),
+          lng: parseFloat(this.props.lng)
+        },
         zoom: 9
       };
     }
@@ -29,23 +32,25 @@ class Map extends React.Component {
         zoom: 2
       };
     }
+
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this._registerListeners();
     this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.updateMarkers(this.props.castles);
-
   }
 
   componentDidUpdate() {
-
     this.MarkerManager.updateMarkers(this.props.castles);
   }
 
   componentWillReceiveProps(newProps) {
-
-    if (this.props.lat !== newProps.lat && this.props.lng !== newProps.lng){
+    if (this.props.lat !== newProps.lat
+      && this.props.lng !== newProps.lng){
       this.map.setOptions({
-        center: {lat: parseFloat(newProps.lat), lng: parseFloat(newProps.lng)},
+        center: {
+          lat: parseFloat(newProps.lat),
+          lng: parseFloat(newProps.lng)
+        },
         zoom: 13
       });
     }
@@ -63,19 +68,16 @@ class Map extends React.Component {
 
   _handleMarkerClick(castle) {
     const imageUrl = castle.imageUrl;
-
     var infowindow = new google.maps.InfoWindow({
        content: `<img src =${imageUrl}  />`
      });
-     const position = { lng: castle.lng, lat: castle.lat };
-     const marker = new google.maps.Marker({
+    const position = { lng: castle.lng, lat: castle.lat };
+    const marker = new google.maps.Marker({
        position,
        map: this.map,
        id: castle.id
      });
     infowindow.open(this.map, marker);
-    // this.props.history.push(`castles/${castle.id}`);
-
   }
 
   render() {
