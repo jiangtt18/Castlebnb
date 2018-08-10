@@ -4,7 +4,6 @@ class Api::BookingsController < ApplicationController
   def index
 
     user = User.find_by(id: params[:guestId])
-
      if user
        @bookings = user.trips
      else
@@ -16,7 +15,6 @@ class Api::BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-
     if @booking.save
       render "api/bookings/show"
     else

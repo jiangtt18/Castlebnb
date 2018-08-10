@@ -5,10 +5,8 @@ import { fetchCastles,searchCastles} from '../../actions/castle_actions';
 import { updateFilter } from '../../actions/filter_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
   return({
     castles: state.entities.castles,
-
   });
 };
 
